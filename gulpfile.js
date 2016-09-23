@@ -22,20 +22,17 @@ const browserSync = require('browser-sync').create();
 //////////////////////////////
 const dirs = {
   js: {
-    lint: {
-      browser: [
-        'src/**/*.js',
-        '!src/**/*.min.js'
-      ],
-      node: [
-        'index.js',
-        'lib/**/*.js',
-      ],
-    },
+    lint: [
+      'index.js',
+      'gulpfile.js',
+      'lib/**/*.js',
+      'src/**/*.js',
+      '!src/**/*.min.js',
+    ],
     uglify: [
       'src/js/**/*.js',
-      '!src/js/**/*.min.js'
-    ]
+      '!src/js/**/*.min.js',
+    ],
   },
   server: {
     main: 'index.js',
@@ -48,7 +45,7 @@ const dirs = {
   },
   sass: 'src/sass/**/*.scss',
   images: 'src/images/**/*.*',
-  public: 'public/'
+  public: 'public/',
 };
 
 const isCI = (typeof process.env.CI !== 'undefined') ? Boolean(process.env.CI) : false;
@@ -60,45 +57,36 @@ const sassOptions = {
 //////////////////////////////
 // JavaScript Lint Tasks
 //////////////////////////////
-gulp.task('eslint', ['eslint:browser', 'eslint:node']);
-
-gulp.task('eslint:browser', function () {
-  return gulp.src(dirs.js.lint.browser)
-    .pipe(eslint('./.eslintrc-browser.yml'))
+gulp.task('eslint', () => {
+  return gulp.src(dirs.js.lint)
+    .pipe(eslint())
     .pipe(eslint.format())
     .pipe(gulpif(isCI, eslint.failOnError()));
 });
 
-gulp.task('eslint:node', function () {
-  return gulp.src(dirs.js.lint.node)
-    .pipe(eslint('./.eslintrc-node.yml'))
-    .pipe(eslint.format())
-    .pipe(gulpif(isCI, eslint.failOnError()));
-});
-
-gulp.task('uglify', function () {
+gulp.task('uglify', () => {
   return gulp.src(dirs.js.uglify)
     .pipe(gulpif(!isCI, sourcemaps.init()))
       .pipe(uglify({
-        'mangle': isCI ? true : false
+        'mangle': isCI,
       }))
     .pipe(gulpif(!isCI, sourcemaps.write('maps')))
-    .pipe(gulp.dest(dirs.public + 'js'))
+    .pipe(gulp.dest(`${dirs.public}js`))
     .pipe(browserSync.stream());
 });
 
-gulp.task('eslint:watch', function () {
-  return gulp.watch([dirs.js.lint.browser, dirs.js.lint.node], ['eslint']);
+gulp.task('eslint:watch', () => {
+  return gulp.watch(dirs.js.lint, ['eslint']);
 });
 
-gulp.task('uglify:watch', function () {
+gulp.task('uglify:watch', () => {
   return gulp.watch(dirs.js.uglify, ['uglify']);
 });
 
 //////////////////////////////
 // Sass Tasks
 //////////////////////////////
-gulp.task('sass', function () {
+gulp.task('sass', () => {
   return gulp.src(dirs.sass)
     .pipe(sasslint())
     .pipe(sasslint.format())
@@ -107,49 +95,49 @@ gulp.task('sass', function () {
       .pipe(sass(eyeglass(sassOptions)))
       .pipe(autoprefixer())
     .pipe(gulpif(!isCI, sourcemaps.write('maps')))
-    .pipe(gulp.dest(dirs.public + 'css'))
+    .pipe(gulp.dest(`${dirs.public}css`))
     .pipe(browserSync.stream());
 });
 
-gulp.task('sass:watch', function () {
+gulp.task('sass:watch', () => {
   return gulp.watch(dirs.sass, ['sass']);
 });
 
 //////////////////////////////
 // Image Tasks
 //////////////////////////////
-gulp.task('images', function () {
+gulp.task('images', () => {
   return gulp.src(dirs.images)
     .pipe(imagemin({
       'progressive': true,
       'svgoPlugins': [
-        { 'removeViewBox': false }
-      ]
+        { 'removeViewBox': false },
+      ],
     }))
-    .pipe(gulp.dest(dirs.public + '/images'));
+    .pipe(gulp.dest(`${dirs.public}/images`));
 });
 
-gulp.task('images:watch', function () {
+gulp.task('images:watch', () => {
   return gulp.watch(dirs.images, ['images']);
 });
 
 //////////////////////////////
 // Nodemon Task
 //////////////////////////////
-gulp.task('nodemon', function (cb) {
+gulp.task('nodemon', (cb) => {
   nodemon({
     script: dirs.server.main,
     watch: dirs.server.watch,
     env: {
-      'NODE_ENV': 'development'
+      'NODE_ENV': 'development',
     },
-    ext: dirs.server.extension
+    ext: dirs.server.extension,
   })
-  .once('start', function () {
+  .once('start', () => {
     cb();
   })
-  .on('restart', function () {
-    setTimeout(function () {
+  .on('restart', () => {
+    setTimeout(() => {
       browserSync.reload();
     }, 500);
   });
@@ -158,11 +146,11 @@ gulp.task('nodemon', function (cb) {
 //////////////////////////////
 // Browser Sync Task
 //////////////////////////////
-gulp.task('browser-sync', ['nodemon'], function () {
-  var appEnv = cfenv.getAppEnv();
+gulp.task('browser-sync', ['nodemon'], () => {
+  const appEnv = cfenv.getAppEnv();
 
   browserSync.init({
-    'proxy': appEnv.url
+    'proxy': appEnv.url,
   });
 });
 
