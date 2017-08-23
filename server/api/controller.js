@@ -11,7 +11,8 @@ function getLyrics(req, res) {
     .then(response => {
       res.status(200).json(response);
     })
-    .catch(() => {
+    .catch((error) => {
+      console.log(error);
       res.status(500).json({reason: 'Server Error'});
     });
 }
