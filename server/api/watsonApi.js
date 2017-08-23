@@ -9,10 +9,10 @@ module.exports = {
 }
 
 let discovery = new DiscoveryV1({
-  username: config.watson.username,
-  password: config.watson.password,
-  version: config.watson.version,
-  version_date: config.watson.version_date
+  username: config.CFCI_WATSON_USERNAME,
+  password: config.CFCI_WATSON_PASSWORD,
+  version: config.CFCI_WATSON_VERSION,
+  version_date: config.CFCI_WATSON_VERSION_DATE
 });
 
 function postDataToWatson(songs) {
@@ -28,8 +28,8 @@ function postPromise(song, index) {
     console.log(JSON.stringify(song));
     discovery.addDocument(
       {
-        environment_id: config.watson.ENVIRONMENT_ID,
-        collection_id: config.watson.COLLECTION_ID,
+        environment_id: config.CFCI_WATSON_ENVIRONMENT_ID,
+        collection_id: config.CFCI_WATSON_COLLECTION_ID,
         file: {
           value: Buffer.from(JSON.stringify(song), 'utf8'),
           options: {
@@ -54,8 +54,8 @@ function getWatsonData(callback) {
   let returnValue = [];
   return discovery.query(
     {
-      environment_id: config.watson.ENVIRONMENT_ID,
-      collection_id: config.watson.COLLECTION_ID,
+      environment_id: config.CFCI_WATSON_ENVIRONMENT_ID,
+      collection_id: config.CFCI_WATSON_COLLECTION_ID,
       query_string: '',
       count: count,
       offset: count*11
