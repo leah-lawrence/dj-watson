@@ -1,0 +1,13 @@
+$cardColor: #272149;
+$accentColor1: #dc267f;
+$accentColor2: #352969;
+$overlay: rgba(255,255,255, 0.5);
+$textColor: #fff;
+$white: #fff;
+
+
+@mixin linear-gradient($direction, $color-stops...) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
