@@ -69,7 +69,7 @@ rules:
   indentation: 2
   leading-zero: 2
   nesting-depth: 2
-  property-sort-order: 2
+  # property-sort-order: 2
   pseudo-element: 2
   quotes: 2
   shorthand-values: 2
