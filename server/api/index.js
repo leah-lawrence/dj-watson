@@ -5,6 +5,6 @@ const router = express.Router();
 
 const controller = require('./controller');
 
-router.get('/get', controller.getData);
+router.get('/getLyrics', controller.getLyrics);
 
 module.exports = router;

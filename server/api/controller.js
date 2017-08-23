@@ -3,9 +3,15 @@
 const service = require('./service')
 
 module.exports = {
-  getData: getData
+  getLyrics: getLyrics
 };
 
-function getData(req, res) {
-  res.status(200).json({name: 'Hello'});
+function getLyrics(req, res) {
+  return service.getLyrics()
+    .then(response => {
+      res.status(200).json(response);
+    })
+    .catch(() => {
+      res.status(500).json({reason: 'Server Error'});
+    });
 }
