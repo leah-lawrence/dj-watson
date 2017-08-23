@@ -4,14 +4,26 @@ const _ = require('lodash');
 const request = require('request');
 const url = require('url');
 const xml2js = require('xml2js');
+const watsonApi = require('./watsonApi.js');
 
 const SONGS_LIST = require('./lyricsList.json');
 const LYRICS_API = 'api.lololyrics.com/0.5/getLyric';
 const NO_LYRICS_RESPONSE = 'No lyric found with that artist and title';
 
 module.exports = {
-  getLyrics: getLyrics
+  getLyrics: getLyrics,
+  postLyricsToWatson: postLyricsToWatson
 };
+
+function postLyricsToWatson() {
+  return getLyrics()
+    .then(lyrics => {
+      return watsonApi.postDataToWatson(lyrics);
+    })
+    .then(response => {
+      return response
+    });
+}
 
 function getLyrics() {
   // return getLyric('adele', 'hello');

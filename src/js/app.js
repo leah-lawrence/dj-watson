@@ -6,7 +6,7 @@
     'myCtrl',
     function ctrl($scope, $http) {
       $scope.cards = 'loading'; // eslint-disable-line no-param-reassign
-      $http.get('http://localhost:3000/db')
+      $http.get('http://localhost:3000/api/db')
       .then(function gotResponse(response) {
         $scope.cards = response.data.cards; // eslint-disable-line no-param-reassign
       })

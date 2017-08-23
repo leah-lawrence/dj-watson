@@ -3,7 +3,8 @@
 const service = require('./service')
 
 module.exports = {
-  getLyrics: getLyrics
+  getLyrics: getLyrics,
+  postLyricsToWatson: postLyricsToWatson
 };
 
 function getLyrics(req, res) {
@@ -13,6 +14,16 @@ function getLyrics(req, res) {
     })
     .catch((error) => {
       console.log(error);
+      res.status(500).json({reason: 'Server Error'});
+    });
+}
+
+function postLyricsToWatson(req, res) {
+  return service.postLyricsToWatson()
+    .then(response => {
+      res.status(200).json(response);
+    })
+    .catch(() => {
       res.status(500).json({reason: 'Server Error'});
     });
 }
