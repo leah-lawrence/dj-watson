@@ -10,6 +10,7 @@ const path = require('path');
 const appEnv = require('./lib/env');
 const renderer = require('./lib/render');
 const cards = require('./db.json');
+const watsonApi = require('./watsonApi.js');
 
 //////////////////////////////
 // App Variables
@@ -27,6 +28,12 @@ app.get('/', (req, res) => {
 
 app.get('/db', (req, res) => {
   res.status('200').json(cards);
+});
+
+app.get('/getWatsonData', (req, res) => {
+  watsonApi.getWatsonData((data) => {
+    res.status(200).json(data);
+  });
 });
 
 //////////////////////////////
