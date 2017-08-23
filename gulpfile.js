@@ -40,6 +40,7 @@ const dirs = {
       'index.js',
       'lib',
       'views',
+      'server',
     ],
     extension: 'js html',
   },

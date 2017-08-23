@@ -36,6 +36,8 @@ app.get('/getWatsonData', (req, res) => {
   });
 });
 
+app.use('/api', require('./server/api'));
+
 //////////////////////////////
 // Start the server
 //////////////////////////////
