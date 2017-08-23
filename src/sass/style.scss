@@ -1,6 +1,7 @@
 @import 'toolkit/reset';
 @import 'ibm-colors';
 @import 'sass-colors';
+@import 'typography';
 
 li {
   display: flex;
@@ -32,6 +33,9 @@ li {
   flex-direction:column;
 }
 .card {
+  display: flex;
+  align-items:center;
+  justify-content: space-around;
   min-width: 320px;
   min-height: 390px;
   // min-width: 160px;
@@ -71,4 +75,13 @@ li {
     background-color: $white;
     box-shadow: $shadowHover;
   }
+}
+.card__albumCover {
+  height: 220px;
+  width: 220px;
+  background-color:steelblue;
+  border-radius:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
