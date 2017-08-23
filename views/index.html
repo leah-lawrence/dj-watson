@@ -7,46 +7,24 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Hello</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
-</head>
+  <head>
+    <title>Hello</title>
 
-<body>
-  <!-- <script src="/js/app.js"></script> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script>
-    var app = angular.module('myApp', []);
-    // var app = angular.module("myShoppingList", []);
-    app.controller("myCtrl", function($scope, $http) {
-      $scope.cards = [
-        {name:"Milk", mana: 'test', hero: 'test'},
-        {name:"Bread", mana: 'test', hero: 'test'},
-        {name:"Cheese", mana: 'test', hero: 'test'}
-      ];
-      $http.get('http://localhost:3000/db')
-        .then(response => {
-          console.log('got res');
-          console.log(response);
-          $scope.cards = response.data.cards
-        })
-        .catch(error => {
-          console.log('got err');
-        })
-    });
-  </script>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="/js/app.js"></script>
+  </head>
 
   <body ng-app="myApp" ng-controller="myCtrl">
     <ul class='list-inline'>
       <li ng-repeat="card in cards">
-        <img class="img-responsive center-block" ng-src="{{card.image_url}}", height="192" width="128">
-        {{card.name | limitTo:15}} <span ng-if='card.name.length >= 7'>...</span>
+        <img id="ID_{{card.name}}" class="img-responsive center-block" ng-src="{{card.image_url}}", height="192" width="128">
+        <span for="ID_{{card.name}}">{{card.name | limitTo:15}}<span ng-if='card.name.length >= 15'>...</span></span>
       </li>
     </ul>
   </body>
-
-</body>
 </html>
