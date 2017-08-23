@@ -14,6 +14,7 @@ module.exports = {
 };
 
 function getLyrics() {
+  // return getLyric('adele', 'hello');
   let lyrics = [];
   return Promise.all(_.chunk(SONGS_LIST, 10).map(currentList => {
     return currentList.reduce((previous, current) => {
@@ -21,17 +22,23 @@ function getLyrics() {
         return getLyric(current.artist, current.track)
           .then(songLyrics => {
             console.log(`Retrieving lyrics for ${current.track} by ${current.artist}`);
-            if (songLyrics !== NO_LYRICS_RESPONSE) {
+            if (songLyrics.lyrics !== NO_LYRICS_RESPONSE) {
               lyrics.push({
                 artist: current.artist,
                 track: current.track,
-                lyrics: songLyrics
+                lyrics: songLyrics.lyrics,
+                album: songLyrics.album,
+                year: songLyrics.year,
+                cover: songLyrics.cover ? songLyrics.cover : undefined
               });
             }
           });
       });
     }, Promise.resolve());
-  })).then(() => lyrics);
+  })).then(() => {
+    console.log('Complete.');
+    return lyrics;
+  });
 }
 
 function getLyric(artist, track) {
@@ -66,7 +73,12 @@ function parseXML(xmlString) {
         reject(error);
       } else {
         // console.log(JSON.stringify(response, null, 2));
-        resolve(response.result.response.join(' '));
+        resolve({
+          lyrics: response.result.response.join(' '),
+          album: response.result.album[0],
+          year: response.result.year[0],
+          cover: response.result.cover[0]
+        });
       }
     });
   });
