@@ -31,3 +31,5 @@ bower_components
 
 # Public folder
 public
+
+package-lock.json
