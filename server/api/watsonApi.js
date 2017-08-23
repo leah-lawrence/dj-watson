@@ -54,8 +54,8 @@ function getWatsonData(callback) {
   let returnValue = [];
   return discovery.query(
     {
-      environment_id: config.watson.ENVIRONMENT_ID,
-      collection_id: config.watson.COLLECTION_ID,
+      environment_id: config.CFCI_WATSON_ENVIRONMENT_ID,
+      collection_id: config.CFCI_WATSON_COLLECTION_ID,
       query_string: '',
       count: count,
       offset: count*11
