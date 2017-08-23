@@ -23,14 +23,8 @@
   <body ng-app="myApp" ng-controller="myCtrl">
     <div class="background background--gradient">
       <nav class="controls">
-        <button class="control control--button" ng-click="handleControlClick()">
-          <img src="images/anger-emoticon.png" alt="angry" />
-        </button>
-        <button class="control control--button" ng-click="handleControlClick()">
-            <img src="images/joy-emoticon.png" alt="joy" />
-        </button>
-        <button class="control control--button" ng-click="handleControlClick()">
-            <img src="images/sad-emoticon.png" alt="sad" />
+        <button class="control control--button" ng-repeat="filter in filters" ng-click="handleControlClick($event)" ng-class="{'filter--selected':filter.selected}" alt="{{filter.name}}">
+          <img src="{{'images/' + filter.name + '-emoticon.png'}}" alt="{{filter.name}}" /> 
         </button>
       </nav>
       <ul class='list-inline'>

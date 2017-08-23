@@ -73,6 +73,9 @@ ul {
     box-shadow: $shadow-hover;
   }
 }
+.filter--selected {
+  background-color: $white90;
+}
 
 .card--albumcover {
   flex-grow: 6;
