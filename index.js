@@ -9,6 +9,7 @@ const path = require('path');
 
 const appEnv = require('./lib/env');
 const renderer = require('./lib/render');
+const cards = require('./db.json');
 
 //////////////////////////////
 // App Variables
@@ -22,6 +23,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   res.render('index');
+});
+
+app.get('/db', (req, res) => {
+  res.status('200').json(cards);
 });
 
 //////////////////////////////
