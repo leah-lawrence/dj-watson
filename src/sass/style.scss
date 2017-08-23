@@ -3,6 +3,16 @@
 @import 'sass-colors';
 @import 'typography';
 
+$margin: 10px;
+$shadow: 0 3px 6px rgba(0,0,0,0.54), 0 3px 6px rgba(0,0,0,0.54);
+$snappyHover: all 0.5s cubic-bezier(.25,.8,.25,1);
+$shadowHover: 0 14px 28px rgba(0,0,0,0.45), 0 10px 10px rgba(0,0,0,0.45);
+
+.background {
+  display: flex;
+  flex-direction: row;
+}
+
 li {
   display: flex;
   flex-direction: column;
