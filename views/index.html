@@ -22,19 +22,19 @@
   <body ng-app="myApp" ng-controller="myCtrl">
     <div class="background background--gradient">
       <nav class="controls">
-        <button class="control control__button"></button>
-        <button class="control control__button"></button>
-        <button class="control control__button"></button>
-        <button class="control control__button"></button>
-        <button class="control control__button"></button>
+        <button class="control control--button"></button>
+        <button class="control control--button"></button>
+        <button class="control control--button"></button>
+        <button class="control control--button"></button>
+        <button class="control control--button"></button>
       </nav>
       <ul class='list-inline'>
         <li class="card" ng-repeat="card in cards">
-          <div class="card__albumCover">
-            <button class="playButton"></button>
+          <div class="card--albumcover">
+            <button class="play-button"></button>
           </div>
-          <p class="card__albumName">Album Name</p>
-          <p class="card__artistName">Artist</p>
+          <p class="card--albumname">Album Name</p>
+          <p class="card--artistname">Artist</p>
         </li>
       </ul>
     </div>

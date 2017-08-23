@@ -4,14 +4,9 @@
 @import 'typography';
 
 $margin: 10px;
-$shadow: 0 3px 6px rgba(0,0,0,0.54), 0 3px 6px rgba(0,0,0,0.54);
-$snappyHover: all 0.5s cubic-bezier(.25,.8,.25,1);
-$shadowHover: 0 14px 28px rgba(0,0,0,0.45), 0 10px 10px rgba(0,0,0,0.45);
-
-.background {
-  display: flex;
-  flex-direction: row;
-}
+$shadow: 0 3px 6px rgba(0, 0, 0, .54), 0 3px 6px rgba(0, 0, 0, .54);
+$snappy-hover: all .5s cubic-bezier(.25, .8, .25, 1);
+$shadow-hover: 0 14px 28px rgba(0, 0, 0, .45), 0 10px 10px rgba(0, 0, 0, .45);
 
 li {
   display: flex;
@@ -22,51 +17,37 @@ ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  $margin: 10px;
-  $shadow: 0 3px 6px rgba(0,0,0,0.54), 0 3px 6px rgba(0,0,0,0.54);
-  $snappyHover: all 0.5s cubic-bezier(.25,.8,.25,1);
-  $shadowHover: 0 14px 28px rgba(0,0,0,0.45), 0 10px 10px rgba(0,0,0,0.45);
+  justify-content: center;
 }
 
-.background {
-  display: flex;
-  flex-direction: row;
-}
-ul {
-  display: flex;
-  flex-direction:row;
-  flex-wrap: wrap;
-  justify-content:center;
-}
-li {
-  display: flex;
-  flex-direction:column;
-}
 .card {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: space-around;
   min-width: 320px;
   min-height: 390px;
   // min-width: 160px;
   // min-height: 190px;
   background-color: color('indigo', 90);
-  cursor:pointer;
+  cursor: pointer;
   margin: $margin;
-  transition: $snappyHover;
-  &:hover {
-    box-shadow: $shadowHover;
-  }
+  transition: $snappy-hover;
   box-shadow: $shadow;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+  }
 }
 
 .background--gradient {
   height: 100vh;
   width: 100vw;
   position: absolute;
-  background-image: linear-gradient(to bottom, #5F2797, #501e58);
+  background-image: linear-gradient(to bottom, $first-purple, $second-purple);
   z-index: -2;
   overflow: scroll;
+  display: flex;
+  flex-direction: row;
 }
 
 .controls {
@@ -74,23 +55,25 @@ li {
   flex-direction: column;
   margin-top: $margin;
 }
-.control__button {
+
+.control--button {
   background-color: $overlay;
-  border: none;
+  border: 0;
   height: 78px;
   width: 78px;
-  
+
   &:hover {
-    transition: $snappyHover;
+    transition: $snappy-hover;
     background-color: $white;
-    box-shadow: $shadowHover;
+    box-shadow: $shadow-hover;
   }
 }
-.card__albumCover {
+
+.card--albumcover {
   height: 220px;
   width: 220px;
-  background-color:steelblue;
-  border-radius:50%;
+  background-color: $steelblue;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
