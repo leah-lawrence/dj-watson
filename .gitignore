@@ -1,3 +1,4 @@
+local.env.json
 # Logs
 logs
 *.log
