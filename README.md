@@ -1,4 +1,4 @@
-# Hackademy Node Starter Project [![Build Status](https://travis.ibm.com/hackademy-live/ha15--djwatson.svg?token=xukZzZdyHr3ssbkMSwSf&branch=master)
+# Hackademy Node Starter Project [![Build Status](https://travis.ibm.com/hackademy-live/ha15--djwatson.svg?token=xukZzZdyHr3ssbkMSwSf&branch=master)](https://travis.ibm.com/hackademy-live/ha15--djwatson.svg?token=xukZzZdyHr3ssbkMSwSf&branch=master)
 
 Welcome to Hackademy!
 
