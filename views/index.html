@@ -20,11 +20,23 @@
   </head>
 
   <body ng-app="myApp" ng-controller="myCtrl">
-    <ul class='list-inline'>
-      <li ng-repeat="card in cards">
-        <img id="ID_{{card.name}}" class="img-responsive center-block" ng-src="{{card.image_url}}", height="192" width="128">
-        <span for="ID_{{card.name}}">{{card.name | limitTo:15}}<span ng-if='card.name.length >= 15'>...</span></span>
-      </li>
-    </ul>
+    <div class="background background--gradient">
+      <nav class="controls">
+        <button class="control control--button"></button>
+        <button class="control control--button"></button>
+        <button class="control control--button"></button>
+        <button class="control control--button"></button>
+        <button class="control control--button"></button>
+      </nav>
+      <ul class='list-inline'>
+        <li class="card" ng-repeat="card in cards">
+          <div class="card--albumcover">
+            <button class="play-button"></button>
+          </div>
+          <p class="card--albumname">Album Name</p>
+          <p class="card--artistname">Artist</p>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
