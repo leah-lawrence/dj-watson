@@ -13,7 +13,18 @@
         })
         .catch(function errorOnGet(error) {
           $scope.cards = error; // eslint-disable-line no-param-reassign
-        });
+      });
+      $scope.handleCardClick = function() {
+        this.card.selected = true
+        $scope.cards.forEach(function(card) {
+          if (card != this.card) {
+            card.selected = false;
+          }
+        }.bind(this))
+      }
+      $scope.handleControlClick = function() {
+        console.log('handling control click');
+      }
     }
   );
 }());

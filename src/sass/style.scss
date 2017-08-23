@@ -23,16 +23,16 @@ ul {
 .card {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   min-width: 320px;
   min-height: 390px;
   // min-width: 160px;
   // min-height: 190px;
-  background-color: color('indigo', 90);
+  background-color: $card-color;
   cursor: pointer;
   margin: $margin;
   transition: $snappy-hover;
   box-shadow: $shadow;
+  font-size: 1.5rem;
 
   &:hover {
     box-shadow: $shadow-hover;
@@ -57,24 +57,67 @@ ul {
 }
 
 .control--button {
-  background-color: $overlay;
+  background-color: $card-color;
   border: 0;
   height: 78px;
   width: 78px;
 
+  img {
+    height: 43px;
+    width: 43px;
+  }
+
   &:hover {
     transition: $snappy-hover;
-    background-color: $white;
+    background-color: $white90;
     box-shadow: $shadow-hover;
   }
 }
 
 .card--albumcover {
-  height: 220px;
-  width: 220px;
-  background-color: $steelblue;
+  flex-grow: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.card--albumcover--circle {
+  height: 230px;
+  width: 230px;
+  position:relative;
+  background-color: transparent;
+  border: 5px solid;
+  border-color: $accent-color;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card--info {
+  flex-grow: 5;
+  display: flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  p {
+    padding-top: 11px;
+  }
+}
+
+.card--selected {
+  background-color: $white90;
+  color: $accent-color;
+}
+
+.play-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 77px;
+  width: 77px;
+  background: $white50;
+  border: 0;
 }
