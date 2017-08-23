@@ -1,7 +1,7 @@
 applications:
   - disk_quota: 1024M
-    host: ha--node-starter
-    name: Hackademy - Node Starter
+    host: ha15--djwatson
+    name: Hackademy 15 - DJ Watson
     path: .
     domain: mybluemix.net
     instances: 1
