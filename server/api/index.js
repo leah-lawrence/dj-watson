@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const router = express.Router();
+const router = new express.Router();
 const watsonApi = require('./watsonApi.js');
 
 const controller = require('./controller');

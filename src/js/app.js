@@ -20,6 +20,7 @@
           selected: false,
         },
       ];
+
       $scope.cards = 'loading'; // eslint-disable-line no-param-reassign
       $http.get($location.absUrl() + '/api/getWatsonData')
         .then(function gotResponse(response) {
