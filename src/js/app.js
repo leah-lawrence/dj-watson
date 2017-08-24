@@ -26,6 +26,21 @@
           },
         ];
 
+        $scope.adjectives = {
+          'anger': {
+            name: 'angry',
+            clicked: false,
+          },
+          'joy': {
+            name: 'happy',
+            clicked: false,
+          },
+          'sadness': {
+            name: 'sad',
+            clicked: false,
+          },
+        };
+
         $scope.currentCardIndexPlaying = {
           state: 'none',
         };
@@ -99,6 +114,7 @@
           var landing = document.querySelector('.landing--experience');
           $location.path('/' + this.filter.name);
           $scope.selectedFilter = order+'enriched_lyrics.emotion.document.emotion.'+this.filter.name; // eslint-disable-line space-infix-ops
+          $scope.adjectives[this.filter.name].clicked = true;
           landing.style.opacity = 0;
           localStorage.setItem('selectedFilter', $scope.selectedFilter);
           window.setTimeout(function timeOut() {
