@@ -29,6 +29,35 @@ const parseXML = (xmlString) => {
   });
 };
 
+const getSpotifyAccessCode = () => {
+  const clientId = process.env.CFCI_SPOTIFY_CLIENT_ID;
+  const clientSecret = process.env.CFCI_SPOTIFY_CLIENT_SECRET;
+  const authOptions = {
+    url: 'https://accounts.spotify.com/api/token',
+    headers: {
+      'Authorization': `Basic ${(new Buffer(
+        `${clientId}:${clientSecret}`
+      ).toString('base64'))}`,
+    },
+    form: {
+      'grant_type': 'client_credentials',
+    },
+    json: true,
+  };
+
+  return new Promise((resolve, reject) => {
+    return request.post(authOptions, (error, response, body) => {
+      if (error) {
+        reject(error);
+      }
+
+      if (response.statusCode === 200) {
+        resolve(body.access_token);
+      }
+    });
+  });
+};
+
 const getLyric = (artist, track) => {
   const options = {
     protocol: 'http',
@@ -51,30 +80,73 @@ const getLyric = (artist, track) => {
   });
 };
 
+const getSpotifyTrack = (accessT, trackUri) => {
+  const trackId = trackUri.replace(/spotify:track:/, '');
+  const options = {
+    url: `https://api.spotify.com/v1/tracks/${trackId}`,
+    headers: {
+      'Authorization': `Bearer ${accessT}`,
+    },
+    json: true,
+  };
+
+  return new Promise((resolve, reject) => {
+    request.get(options, (error, response, body) => {
+      if (error) {
+        return reject(error);
+      }
+
+      return resolve(body);
+    });
+  });
+};
+
+const delay = (timeout) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, timeout);
+  });
+};
+
 const getLyrics = () => {
   const lyrics = [];
 
-  return Promise.all(_.chunk(SONGS_LIST, 10).map(currentList => {
-    return currentList.reduce((previous, current) => {
-      return previous.then(() => {
-        return getLyric(current.artist, current.track)
-          .then(songLyrics => {
-            if (songLyrics.lyrics !== NO_LYRICS_RESPONSE) {
-              lyrics.push({
-                artist: current.artist,
-                track: current.track,
-                lyrics: songLyrics.lyrics,
-                album: songLyrics.album,
-                year: songLyrics.year,
-                cover: songLyrics.cover ? songLyrics.cover : undefined,
+  return getSpotifyAccessCode()
+    .then(ACCESS_CODE => {
+      return Promise.all(_.chunk(SONGS_LIST, 25).map(currentList => {
+        return currentList.reduce((previous, current) => {
+          return previous.then(() => {
+            return getLyric(current.artist, current.track)
+              .then(songLyrics => {
+                return delay(1000)
+                  .then(() => {
+                    if (songLyrics.lyrics !== NO_LYRICS_RESPONSE) {
+                      return getSpotifyTrack(ACCESS_CODE, current.uri)
+                        .then(spotifyInfo => {
+                          _.unset(spotifyInfo, 'available_markets');
+                          _.unset(spotifyInfo, 'album.available_markets');
+                          lyrics.push({
+                            artist: current.artist,
+                            track: current.track,
+                            lyrics: songLyrics.lyrics,
+                            album: songLyrics.album,
+                            year: songLyrics.year,
+                            cover: songLyrics.cover ? songLyrics.cover : undefined,
+                            spotifyInfo,
+                          });
+                        });
+                    }
+
+                    return Promise.resolve();
+                  });
               });
-            }
           });
+        }, Promise.resolve());
+      })).then(() => {
+        return lyrics;
       });
-    }, Promise.resolve());
-  })).then(() => {
-    return lyrics;
-  });
+    });
 };
 
 const postLyricsToWatson = () => {
@@ -87,4 +159,5 @@ const postLyricsToWatson = () => {
 module.exports = {
   getLyrics,
   postLyricsToWatson,
+  getSpotifyAccessCode,
 };
