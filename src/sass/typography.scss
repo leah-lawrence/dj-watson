@@ -2,5 +2,21 @@ $white: #fff;
 
 body {
   color: $white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
+
+.card--albumname {
+  font-size: 2rem;
+  font-weight: '200';
+  padding-top:  10%;
+  white-space: wrap;
+}
+
+.card--artistname {
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 2.5;
 }
