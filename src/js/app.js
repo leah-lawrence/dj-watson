@@ -30,7 +30,29 @@
         };
 
         $scope.cards = 'loading';
-        $http.get($location.absUrl() + 'api/getWatsonData')
+        $scope.selectedFilter = localStorage.getItem('selectedFilter');
+        $scope.dateSortOrder = localStorage.getItem('dateSortOrder');
+        $location.path('/' + $scope.selectedFilter.slice(42));
+
+        $scope.$on('$locationChangeSuccess', function () {
+          const sentiment = $location.path().slice(1);
+          var urlUpdateFlag = false;
+          $location.hash('');
+          $scope.filters.forEach(function loopEach(filter) {
+            if (sentiment === filter.name) {
+              $scope.selectedFilter = '-' + 'enriched_lyrics.emotion.document.emotion.' + sentiment;
+              localStorage.setItem('selectedFilter', $scope.selectedFilter);
+              urlUpdateFlag = true;
+            }
+          });
+
+          if (!urlUpdateFlag) {
+            $scope.selectedFilter = localStorage.getItem('selectedFilter');
+            $location.path('/' + $scope.selectedFilter.slice(42));
+          }
+        });
+
+        $http.get('http://' + $location.host() + ':' + $location.port() + '/api/getWatsonData')
           .then(function gotResponse(response) {
             $scope.cards = response.data.results;
           })
@@ -64,11 +86,25 @@
 
         $scope.handleControlClick = function handleControlClick(order) {
           var landing = document.querySelector('.landing--experience');
+          $location.path('/' + this.filter.name);
           $scope.selectedFilter = order+'enriched_lyrics.emotion.document.emotion.'+this.filter.name; // eslint-disable-line space-infix-ops
           landing.style.opacity = 0;
+          localStorage.setItem('selectedFilter', $scope.selectedFilter);
           window.setTimeout(function timeOut() {
             landing.style.display = 'none';
           }, 500);
+        };
+
+        $scope.isControlFilterSelected = function isControlFilterSelected(filter) {
+          return $scope.selectedFilter.includes(filter.name);
+        };
+
+        $scope.isSortFilterIsSelected = function isSortFilterSelected(order) {
+          if (order === '') {
+            return order === $scope.dateSortOrder;
+          }
+
+          return $scope.dateSortOrder.includes(order);
         };
 
         $scope.characterFilter = function characterFilter(filterString) {
@@ -81,6 +117,7 @@
 
         $scope.sortByDate = function sortByDate(order) {
           $scope.dateSortOrder = order + 'year';
+          localStorage.setItem('dateSortOrder', $scope.dateSortOrder);
         };
 
         $scope.getImageName = function getImageName(name) {

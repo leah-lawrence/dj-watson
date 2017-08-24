@@ -23,17 +23,17 @@
       </div>
     </nav>
     <nav id="cards-nav" class="controls">
-        <button ng-repeat="filter in filters" class="control control--button" ng-class="{'filter--selected':filter.selected}" ng-click="handleControlClick('-')">
+        <button ng-repeat="filter in filters" class="control control--button" ng-class="{'filter--selected':(filter.selected || isControlFilterSelected(filter))}" ng-click="handleControlClick('-')">
           <img ng-src="{{getImageName(filter.name)}}" alt="{{filter.name}}"/>
         </button>
         <nav ng-hide="!selectedFilter" class="date--controls">
-          <button class="control control--button" ng-click="sortByDate('-')" ng-class="{'filter--selected':filter.selected}">
+          <button class="control control--button" ng-click="sortByDate('-')" ng-class="{'filter--selected':(filter.selected || isSortFilterIsSelected('-'))}">
             New to Old
           </button>
-          <button class="control control--button" ng-click="sortByDate('+')" ng-class="{'filter--selected':filter.selected}">
+          <button class="control control--button" ng-click="sortByDate('+')" ng-class="{'filter--selected':(filter.selected || isSortFilterIsSelected('+'))}">
             Old to New
           </button>
-          <button class="control control--button" ng-click="dateSortOrder=''" ng-class="{'filter--selected':filter.selected}">
+          <button class="control control--button" ng-click="dateSortOrder=''" ng-class="{'filter--selected':(filter.selected || isSortFilterIsSelected(''))}">
             Clear date
           </button>
         </nav>
