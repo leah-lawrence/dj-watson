@@ -1,13 +1,11 @@
-$card-color: #272149;
-$accent-color1: #dc267f;
-$accent-color2: #352969;
-$overlay: rgba(255, 255, 255, .5);
+$card-color: rgba(255, 255, 255, .2);
+$accent-color: #5e1445;
+$white50: rgba(255, 255, 255, .5);
 $text-color: #fff;
-$white: #fff;
+$white90: rgba(255, 255, 255, .9);
 $steelblue: #4682b4;
-$first-purple: #5f2797;
-$second-purple: #501e58;
-
+$first-purple: #63194a;
+$second-purple: #28003e;
 
 // @mixin linear-gradient($direction, $color-stops...) {
 //   background: nth(nth($color-stops, 1), 1);
