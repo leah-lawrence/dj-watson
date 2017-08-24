@@ -104,7 +104,14 @@ ul {
   justify-content: flex-start;
 
   p {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
     padding-top: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300px;
   }
 }
 
