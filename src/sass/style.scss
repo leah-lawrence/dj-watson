@@ -28,6 +28,7 @@ ul {
   height: 390px;
   margin: $margin;
   padding: 30px;
+  position: relative;
   text-align: center;
   transition: $snappy-hover;
   width: 320px;
@@ -125,6 +126,12 @@ ul {
 .card--selected {
   background-color: $white90;
   color: $accent-color;
+}
+
+.likes {
+  left: 5px;
+  position: absolute;
+  top: 5px;
 }
 
 .play-button {

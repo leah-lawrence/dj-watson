@@ -59,6 +59,10 @@
         $scope.sortByDate = function sortByDate(order) {
           $scope.dateSortOrder = order + 'year';
         };
+
+        $scope.getImageName = function getImageName(name) {
+          return 'images/' + name + '.svg';
+        };
       },
     ]
   );
