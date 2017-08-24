@@ -35,8 +35,21 @@
         $location.path('/' + $scope.selectedFilter.slice(42));
 
         $scope.$on('$locationChangeSuccess', function () {
+          const sentiment = $location.path().slice(1);
+          var urlUpdateFlag = false;
           $location.hash('');
-          $scope.selectedFilter = '-' + 'enriched_lyrics.emotion.document.emotion.' + $location.path().slice(1);
+          $scope.filters.forEach(function loopEach(filter) {
+            if (sentiment === filter.name) {
+              $scope.selectedFilter = '-' + 'enriched_lyrics.emotion.document.emotion.' + sentiment;
+              localStorage.setItem('selectedFilter', $scope.selectedFilter);
+              urlUpdateFlag = true;
+            }
+          });
+
+          if (!urlUpdateFlag) {
+            $scope.selectedFilter = localStorage.getItem('selectedFilter');
+            $location.path('/' + $scope.selectedFilter.slice(42));
+          }
         });
 
         $http.get('http://' + $location.host() + ':' + $location.port() + '/api/getWatsonData')
