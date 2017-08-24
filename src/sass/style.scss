@@ -91,9 +91,9 @@ ul {
   display: flex;
   flex-direction: column;
   flex-grow: 6;
+  height: 260px;
   justify-content: center;
   position: relative;
-  height: 260px;
 }
 
 .card--albumcover--circle {
@@ -192,5 +192,15 @@ ul {
       text-align: center;
       width: 90px;
     }
+  }
+}
+
+.circular-spin {
+  animation: spin 1.33s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
 }

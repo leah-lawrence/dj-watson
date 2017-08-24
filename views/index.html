@@ -43,7 +43,7 @@
         <li class="card" ng-repeat="card in cards | orderBy:selectedFilter | orderBy:dateSortOrder" ng-click="handleCardClick()" ng-class="{'card--selected': card.selected}" ng-hide="card.cover===undefined">
           <div class="likes">{{card.spotifyInfo.popularity ? card.spotifyInfo.popularity: 0}} Likes</div>
           <div class="card--albumcover">
-            <div style="background-image: url({{card.cover ? card.cover : 'images/cover.jpg'}})" ng-class="{'card-cover-default': !card.cover}" class="card--albumcover--circle">
+            <div style="background-image: url({{card.cover ? card.cover : 'images/cover.jpg'}})" ng-class="{'card-cover-default': !card.cover, 'circular-spin': card.selected === true}" class="card--albumcover--circle" >
               <button class="play-button">
                 <img src="images/play-button.svg" alt="play"/>
               </button>
