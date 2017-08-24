@@ -2,13 +2,7 @@ $accent-color: #5e1445;
 $card-color: rgba(255, 255, 255, .2);
 $first-purple: #63194a;
 $second-purple: #28003e;
-$steelblue: #4682b4;
 $text-color: #fff;
 $white50: rgba(255, 255, 255, .5);
 $white90: rgba(255, 255, 255, .9);
-
-// @mixin linear-gradient($direction, $color-stops...) {
-//   background: nth(nth($color-stops, 1), 1);
-//   background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
-//   background: linear-gradient($direction, $color-stops);
-// }
+$white: #fff;

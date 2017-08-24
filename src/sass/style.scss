@@ -25,10 +25,12 @@ ul {
   box-shadow: $shadow;
   cursor: pointer;
   display: flex;
-  font-size: 1.5rem;
+  //font-size: 1.5rem;
   margin: $margin;
   height: 390px;
   width: 320px;
+  text-align: center;
+  padding: 30px;
   transition: $snappy-hover;
   &:hover {
     box-shadow: $shadow-hover;
@@ -98,8 +100,9 @@ ul {
 }
 
 .card--info {
-  align-items: center;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   flex-grow: 5;
   justify-content: flex-start;
