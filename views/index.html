@@ -50,7 +50,7 @@
             </div>
           </div>
           <div class="card--info">
-            <p class="card--trackname">{{characterFilter(card.track) | limitTo: 25}}<span ng-show="characterFilter(card.track).length > 25">...</span></p>
+            <p class="card--trackname">{{characterFilter(card.track) | limitTo: 20}}<span ng-show="characterFilter(card.track).length > 20">...</span></p>
             <p class="card--artistname">
               {{characterFilter(card.artist) | limitTo: 25}}
               <span ng-show="characterFilter(card.track).length > 25">...</span>
