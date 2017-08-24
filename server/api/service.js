@@ -12,6 +12,7 @@ const NO_LYRICS_RESPONSE = 'No lyric found with that artist and title';
 
 const parseXML = (xmlString) => {
   return new Promise((resolve, reject) => {
+    // Since response is XML
     xml2js.parseString(xmlString, (err, response) => {
       if (err) {
         reject(err);
