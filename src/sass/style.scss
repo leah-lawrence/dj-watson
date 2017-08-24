@@ -108,6 +108,10 @@ ul {
   }
 }
 
+.card-cover-default {
+  background-size: cover;
+}
+
 .card--selected {
   background-color: $white90;
   color: $accent-color;
