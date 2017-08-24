@@ -1,29 +1,32 @@
 'use strict';
 
-const service = require('./service')
+const service = require('./service');
 
-module.exports = {
-  getLyrics: getLyrics,
-  postLyricsToWatson: postLyricsToWatson
-};
-
-function getLyrics(req, res) {
+const getLyrics = (req, res) => {
   return service.getLyrics()
     .then(response => {
       res.status(200).json(response);
     })
-    .catch((error) => {
-      console.log(error);
-      res.status(500).json({reason: 'Server Error'});
+    .catch(() => {
+      res.status(500).json({
+        reason: 'Server Error',
+      });
     });
-}
+};
 
-function postLyricsToWatson(req, res) {
+const postLyricsToWatson = (req, res) => {
   return service.postLyricsToWatson()
     .then(response => {
       res.status(200).json(response);
     })
     .catch(() => {
-      res.status(500).json({reason: 'Server Error'});
+      res.status(500).json({
+        reason: 'Server Error',
+      });
     });
-}
+};
+
+module.exports = {
+  getLyrics,
+  postLyricsToWatson,
+};

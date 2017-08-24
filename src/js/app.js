@@ -1,12 +1,15 @@
 (function app() {
   'use strict';
 
+  /* eslint-disable no-param-reassign */
+
   var angularApp = angular.module('myApp', []); // eslint-disable-line no-undef
+
   angularApp .controller(
     'myCtrl',
     function ctrl($scope, $http, $location) {
-      $scope.activeControl = null; // eslint-disable-line no-param-reassign
-      $scope.filters = [ // eslint-disable-line no-param-reassign
+      $scope.activeControl = null;
+      $scope.filters = [
         {
           name: 'anger',
           selected: false,
@@ -20,16 +23,17 @@
           selected: false,
         },
       ];
-      $scope.cards = 'loading'; // eslint-disable-line no-param-reassign
+
+      $scope.cards = 'loading';
       $http.get($location.absUrl() + '/api/getWatsonData')
         .then(function gotResponse(response) {
-          $scope.cards = response.data.results; // eslint-disable-line no-param-reassign
+          $scope.cards = response.data.results;
         })
         .catch(function errorOnGet(error) {
-          $scope.cards = error; // eslint-disable-line no-param-reassign
+          $scope.cards = error;
         });
 
-      $scope.handleCardClick = function handleCardClick() { // eslint-disable-line no-param-reassign
+      $scope.handleCardClick = function handleCardClick() {
         this.card.selected = true;
 
         // $scope.cards.forEach(function(card) {
@@ -39,7 +43,7 @@
         // }.bind(this));
       };
 
-      $scope.handleControlClick = function handleControlClick() { // eslint-disable-line no-param-reassign
+      $scope.handleControlClick = function handleControlClick() {
         this.filter.selected = true;
 
         // $scope.filters.forEach(function(filter) {

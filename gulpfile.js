@@ -27,6 +27,7 @@ const dirs = {
       'gulpfile.js',
       'lib/**/*.js',
       'src/**/*.js',
+      'server/**/*.js',
       '!src/**/*.min.js',
     ],
     uglify: [
