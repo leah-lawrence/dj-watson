@@ -1,10 +1,3 @@
-<!-- <!doctype html>
-<html>
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  </head>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
   <head>
@@ -24,7 +17,7 @@
     <div id="cards-background" class="background background--gradient" ng-click="clickBlank($event)">
       <nav id="cards-nav" class="controls">
         <button ng-repeat="filter in filters" class="control control--button" ng-class="{'filter--selected':filter.selected}" ng-click="handleControlClick('-')">
-          <img src="{{'images/' + filter.name + '-emoticon.png'}}" alt="{{filter.name}}" />
+          <img ng-src="{{getImageName(filter.name)}}" alt="{{filter.name}}"/>
         </button>
         <nav class="controls">
           <button class="control control--button" ng-click="sortByDate('-')" ng-class="{'filter--selected':filter.selected}">
@@ -33,10 +26,14 @@
           <button class="control control--button" ng-click="sortByDate('+')" ng-class="{'filter--selected':filter.selected}">
             Old to New
           </button>
+          <button class="control control--button" ng-click="dateSortOrder=''" ng-class="{'filter--selected':filter.selected}">
+            Clear date
+          </button>
         </nav>
       </nav>
       <ul id="cards-list" class='list-inline'>
         <li class="card" ng-repeat="card in cards | orderBy:selectedFilter | orderBy:dateSortOrder" ng-click="handleCardClick()" ng-class="{'card--selected': card.selected}" ng-hide="card.cover===undefined">
+          <div class="likes">{{card.spotifyInfo.popularity ? card.spotifyInfo.popularity: 0}} Likes</div>
           <div class="card--albumcover">
             <div style="background-image: url({{card.cover ? card.cover : 'images/cover.jpg'}})" ng-class="{'card-cover-default': !card.cover}" class="card--albumcover--circle">
               <button class="play-button">
@@ -48,10 +45,6 @@
             <p class="card--artistname">{{characterFilter(card.track)}}</p>
             <p class="card--artistname">{{characterFilter(card.artist)}}</p>
             <p class="card--artistname">{{card.year}}</p>
-            <!-- </br>
-            <div class="card--artistname">anger {{card.enriched_lyrics.emotion.document.emotion.anger | limitTo:10}}</div>
-            <div class="card--artistname">joy {{card.enriched_lyrics.emotion.document.emotion.joy | limitTo:10}}</div>
-            <div class="card--artistname">sadness {{card.enriched_lyrics.emotion.document.emotion.sadness | limitTo:10}}</div> -->
           </div>
         </li>
       </ul>
