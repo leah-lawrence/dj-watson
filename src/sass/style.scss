@@ -145,6 +145,10 @@ ul {
   top: 5px;
 }
 
+.card--played {
+  background-color: $white10;
+}
+
 .play-button {
   align-items: center;
   background: $white;
@@ -192,5 +196,15 @@ ul {
       text-align: center;
       width: 90px;
     }
+  }
+}
+
+.circular-spin {
+  animation: spin 1.33s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
 }

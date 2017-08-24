@@ -25,6 +25,10 @@
           },
         ];
 
+        $scope.currentCardIndexPlaying = {
+          state: 'none',
+        };
+
         $scope.cards = 'loading';
         $http.get($location.absUrl() + 'api/getWatsonData')
           .then(function gotResponse(response) {
@@ -81,6 +85,25 @@
 
         $scope.getImageName = function getImageName(name) {
           return 'images/' + name + '.svg';
+        };
+
+        $scope.spinCardVinyl = function spinCardVinyl(card) {
+          if (card.playing === undefined || card.playing === false) {
+            card.playing = true;
+          }
+          else {
+            card.playing = false;
+          }
+
+          if (JSON.stringify($scope.currentCardIndexPlaying) === JSON.stringify(card)) {
+            $scope.currentCardIndexPlaying = {
+              state: 'none',
+            };
+          }
+          else {
+            $scope.currentCardIndexPlaying.playing = false;
+            $scope.currentCardIndexPlaying = card;
+          }
         };
       },
     ]
