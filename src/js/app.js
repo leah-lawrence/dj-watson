@@ -25,6 +25,8 @@
           },
         ];
 
+        $scope.currentCardIndexPlaying = 'None';
+
         $scope.cards = 'loading';
         $http.get($location.absUrl() + 'api/getWatsonData')
           .then(function gotResponse(response) {
@@ -81,6 +83,20 @@
 
         $scope.getImageName = function getImageName(name) {
           return 'images/' + name + '.svg';
+        };
+
+        $scope.spinCardVinyl = function spinCardVinyl(index) {
+          if ($scope.currentCardIndexPlaying === index) {
+            $scope.cards[index].playing = false;
+            $scope.currentCardIndexPlaying = 'None';
+          }
+          else {
+            if ($scope.currentCardIndexPlaying !== 'None') {
+              $scope.cards[$scope.currentCardIndexPlaying].playing = false;
+            }
+            $scope.cards[index].playing = true;
+            $scope.currentCardIndexPlaying = index;
+          }
         };
       },
     ]
