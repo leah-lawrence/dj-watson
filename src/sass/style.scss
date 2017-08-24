@@ -47,13 +47,15 @@ ul {
   padding: 3.125em 3.125em 0 0;
   position: absolute;
   width: 100vw;
-  z-index: -2;
+  z-index: 4;
 }
 
 .controls {
   display: flex;
   flex-direction: column;
   margin-top: $margin;
+  position: absolute;
+  z-index: 6;
 }
 
 .control--button {
@@ -75,6 +77,12 @@ ul {
   }
 }
 
+.date--controls {
+  display: flex;
+  flex-direction: column;
+  margin-top: $margin;
+}
+
 .filter--selected {
   background-color: $white90;
 }
@@ -91,6 +99,8 @@ ul {
 .card--albumcover--circle {
   align-items: center;
   background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
   border: 5px solid;
   border-color: $accent-color;
   border-radius: 50%;
@@ -112,11 +122,11 @@ ul {
     align-items: center;
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    overflow: scroll;
     padding-top: 11px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 300px;
+    width: 270px;
   }
 }
 
@@ -144,4 +154,43 @@ ul {
   height: 77px;
   justify-content: center;
   width: 77px;
+}
+
+.landing--experience {
+  align-items: center;
+  background-color: $landing-background;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  opacity: 1;
+  position: fixed;
+  transition: opacity .5s cubic-bezier(.25, .8, .25, 1);
+  width: 100vw;
+  z-index: 5;
+
+  h1,
+  h3 {
+    font-weight: 300;
+  }
+
+  span {
+    font-weight: 700;
+  }
+
+  .guidance {
+    left: 117px;
+    position: absolute;
+    top: 117px;
+
+    img {
+      height: 156px;
+      width: 78px;
+    }
+
+    .guidance--copy {
+      text-align: center;
+      width: 90px;
+    }
+  }
 }

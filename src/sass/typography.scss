@@ -7,16 +7,31 @@ body {
   vertical-align: middle;
 }
 
-
 .card--trackname {
   font-size: 2rem;
-  font-weight: '200';
+  font-weight: 200;
   padding-top:  10%;
   white-space: wrap;
 }
 
 .card--artistname {
-  font-size: .9rem;
-  font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 200;
   line-height: 2.5;
+}
+
+h1 {
+  font-size: 3.998rem;
+}
+
+h2 {
+  font-size: 2.827rem;
+}
+
+h3 {
+  font-size: 1.999rem;
+}
+
+h4 {
+  font-size: 1.414rem;
 }
