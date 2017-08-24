@@ -63,7 +63,6 @@ function getWatsonData(callback) {
     function(error, data) {
       if (error !== undefined) {
         console.log('Page: ' + 0 +', Got results  0 to '  + data.results.length + ' out of ' + data.matching_results + ' results.');
-        console.log(data);
         callback({
           totalMatches: data.matching_results,
           results: transformData(data.results)

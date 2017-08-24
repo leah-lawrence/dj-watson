@@ -30,15 +30,15 @@
       <ul class='list-inline'>
         <li class="card" ng-repeat="card in cards" ng-click="handleCardClick()" ng-class="{'card--selected': card.selected}">
           <div class="card--albumcover">
-            <div class="card--albumcover--circle">
+            <div style="background-image: url({{card.cover}})" class="card--albumcover--circle">
               <button class="play-button">
                 <img src="images/play-button.svg" alt="play"/>
               </button>
             </div>
           </div>
           <div class="card--info">
-            <p class="card--albumname">Album Name</p>
-            <p class="card--artistname">Artist</p>
+            <p class="card--albumname">{{card.album}}</p>
+            <p class="card--artistname">{{card.artist}}</p>
           </div>
         </li>
       </ul>
