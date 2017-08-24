@@ -35,13 +35,26 @@
           });
 
         $scope.handleCardClick = function handleCardClick() {
-          this.card.selected = true;
+          if (this.card.selected) {
+            this.card.selected = false;
+          }
+          else {
+            this.card.selected = true;
 
-          $scope.cards.forEach(function loopEach(card) {
-            if (card !== this.card) {
+            $scope.cards.forEach(function loopEach(card) {
+              if (card !== this.card) {
+                card.selected = false;
+              }
+            }.bind(this));
+          }
+        };
+
+        $scope.clickBlank = function clickBlank($event) {
+          if ($event.target.id === 'cards-background' || $event.target.id === 'cards-list' || $event.target.id === 'cards-nav') {
+            $scope.cards.forEach(function loopEach(card) {
               card.selected = false;
-            }
-          }.bind(this));
+            });
+          }
         };
 
         $scope.handleControlClick = function handleControlClick(order) {

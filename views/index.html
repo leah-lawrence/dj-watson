@@ -14,8 +14,8 @@
   </head>
 
   <body ng-controller="myCtrl">
-    <div class="background background--gradient">
-      <nav class="controls">
+    <div id="cards-background" class="background background--gradient" ng-click="clickBlank($event)">
+      <nav id="cards-nav" class="controls">
         <button ng-repeat="filter in filters" class="control control--button" ng-class="{'filter--selected':filter.selected}" ng-click="handleControlClick('-')">
           <img ng-src="{{getImageName(filter.name)}}" alt="{{filter.name}}"/>
         </button>
@@ -31,7 +31,7 @@
           </button>
         </nav>
       </nav>
-      <ul class='list-inline'>
+      <ul id="cards-list" class='list-inline'>
         <li class="card" ng-repeat="card in cards | orderBy:selectedFilter | orderBy:dateSortOrder" ng-click="handleCardClick()" ng-class="{'card--selected': card.selected}" ng-hide="card.cover===undefined">
           <div class="likes">{{card.spotifyInfo.popularity ? card.spotifyInfo.popularity: 0}} Likes</div>
           <div class="card--albumcover">
