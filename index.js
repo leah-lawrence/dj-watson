@@ -11,8 +11,19 @@ const path = require('path');
 const appEnv = require('./lib/env');
 const renderer = require('./lib/render');
 
+/* eslint-disable no-console */
+
+console.log('Before Env Vars');
+console.log(JSON.stringify(process.env, null, 2));
+
+console.log('Bluemix Vars');
+console.log(appEnv.isLocal);
+
 // Check if the application is running locally and use the environment variables accordingly
 process.env = (appEnv.isLocal) ? require('./local.env.json') : process.env;
+
+console.log('After Env Vars');
+console.log(JSON.stringify(process.env, null, 2));
 
 //////////////////////////////
 // App Variables
