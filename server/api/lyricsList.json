@@ -1,446 +1,547 @@
 [
   {
     "artist": "Jack of Sound",
-    "track": "This Song Created Us"
+    "track": "This Song Created Us",
+    "uri": "spotify:track:52VLrWtpkU6BsEfbs4vUKK"
   },
   {
     "artist": "Bratkilla",
-    "track": "Idealist"
+    "track": "Idealist",
+    "uri": "spotify:track:2sz6acCckcveMtXF3Nvg06"
   },
   {
     "artist": "Refuzion",
-    "track": "Follow Me"
+    "track": "Follow Me",
+    "uri": "spotify:track:1XPrdatOymlUrpdRJYkw80"
   },
   {
     "artist": "Noize Suppressor",
-    "track": "The Return Of Bike's Drum (The Outside Agency Remix)"
+    "track": "The Return of Bike's Drum (The Outside Agency Remix)",
+    "uri": "spotify:track:0roRaDFr6XoMue2RQ3a4Re"
   },
   {
     "artist": "Detest",
-    "track": "Ultra Deth"
+    "track": "Ultra Deth",
+    "uri": "spotify:track:3ha7dQ6XAwYx85sYHScVRR"
   },
   {
     "artist": "Nosferatu",
-    "track": "Dr. Shitkickaz"
+    "track": "Dr. Shitkickaz",
+    "uri": "spotify:track:6hcg4HVZ2vNrzf3GeV61Iv"
   },
   {
     "artist": "Forbidden Society",
-    "track": "Burn VIP"
+    "track": "Burn VIP",
+    "uri": "spotify:track:4j8vLhCCQ8imEEEvY6B8oO"
   },
   {
     "artist": "Mutated Forms",
-    "track": "Affectionate"
+    "track": "Affectionate",
+    "uri": "spotify:track:5pTT69qdxs49PfgOG6pIkK"
   },
   {
     "artist": "Public Enemies",
-    "track": "You're All Going To Die"
+    "track": "You're All Going To Die",
+    "uri": "spotify:track:2fs2EL0uYz7lYg6qyMjp1A"
   },
   {
     "artist": "Nightfall",
-    "track": "Deadliest Sound"
+    "track": "Deadliest Sound",
+    "uri": "spotify:track:6QUXaN2ZQ7vMeceC3GCEnu"
   },
   {
     "artist": "Caliban",
-    "track": "Mein Schwarzes Herz"
+    "track": "Mein schwarzes Herz",
+    "uri": "spotify:track:0CB0rjwlapIt1WiaVF4clc"
   },
   {
     "artist": "Jebroer",
-    "track": "Me Gabber"
+    "track": "Me Gabber",
+    "uri": "spotify:track:6EXBuSzvrurcYbizwelIok"
   },
   {
     "artist": "MYST",
-    "track": "The Ultimate Destination"
+    "track": "The Ultimate Destination",
+    "uri": "spotify:track:0oeBu33e3ATTxAXhUHjrs7"
   },
   {
     "artist": "Brennan Heart",
-    "track": "Leaving Us Behind"
+    "track": "Leaving Us Behind",
+    "uri": "spotify:track:6FLP8weK6hEAzGRbKllSpO"
   },
   {
     "artist": "LTN",
-    "track": "Somebody I Could Be"
+    "track": "Somebody I Could Be",
+    "uri": "spotify:track:5GOdGvvVzHRGOw5ZRPOcPE"
   },
   {
     "artist": "Brennan Heart",
-    "track": "Fire In The Sky"
+    "track": "Fire In the Sky",
+    "uri": "spotify:track:1KYOPS225y48zCEGPqg5XY"
   },
   {
     "artist": "Hard Driver",
-    "track": "Never Stop Me"
+    "track": "Never Stop Me",
+    "uri": "spotify:track:09JsX6HOtgRl9blNKo8vZP"
   },
   {
     "artist": "Lenzman",
-    "track": "Got My Mind Made Up"
+    "track": "Got My Mind Made Up",
+    "uri": "spotify:track:1NsNUDI7doaMtQ4IwKJ1OU"
   },
   {
     "artist": "Phrantic",
-    "track": "Glowing In the Dark"
+    "track": "Glowing in the Dark",
+    "uri": "spotify:track:7lSZE6jpDUXl2jN2vA4TKd"
   },
   {
     "artist": "The Fuze",
-    "track": "Starcatching"
+    "track": "Starcatching",
+    "uri": "spotify:track:76M9iwjn7PN4bU7PHSxUD7"
   },
   {
     "artist": "Cyber",
-    "track": "ILY"
+    "track": "ILY",
+    "uri": "spotify:track:0JMeGFbnBs4SIcNXJwBGVa"
   },
   {
     "artist": "Da Tweekaz",
-    "track": "Wodka"
+    "track": "Wodka",
+    "uri": "spotify:track:1uEt4Ly9Oy3tLmLJPdxwUN"
   },
   {
     "artist": "Scooter",
-    "track": "Our Happy Hardcore"
+    "track": "Our Happy Hardcore",
+    "uri": "spotify:track:5n7ZPLLd7zZ4EhRSCPNT51"
   },
   {
     "artist": "Micropoint",
-    "track": "Ping Machine"
-  },
-  {
-    "artist": "Max Enforcer & Coone",
-    "track": "Love x Hate"
+    "track": "Ping Machine",
+    "uri": "spotify:track:7xqGzhnAyIviJB9imuHEny"
   },
   {
     "artist": "Sven Väth",
-    "track": "Dein Schweiss"
+    "track": "Dein Schweiss",
+    "uri": "spotify:track:55i54gOVFclaiFmX9MPWEQ"
   },
   {
     "artist": "Promo",
-    "track": "Een En Al Blijheid"
+    "track": "Een en Al Blijheid",
+    "uri": "spotify:track:73bk8wlvLeAJyhoeIxMySi"
   },
   {
     "artist": "Teyo & Deeperz",
-    "track": "Ready for Madness"
-  },
-  {
-    "artist": "Groover",
-    "track": "Boogey"
+    "track": "Ready for Madness",
+    "uri": "spotify:track:7JcZOiMmQoJf6i41w0Utyo"
   },
   {
     "artist": "C-Netik",
-    "track": "The Hungriest"
+    "track": "The Hungriest",
+    "uri": "spotify:track:41KZfiqNUQzcJ2qr8K33I3"
   },
   {
     "artist": "Drokz",
-    "track": "We Are About Something"
+    "track": "We Are About Something",
+    "uri": "spotify:track:2Njtx9QmdSdQQk2WSuG6nM"
   },
   {
     "artist": "Angelika",
-    "track": "Better than ever"
+    "track": "Better than Ever",
+    "uri": "spotify:track:11TccCL1kZhhe3aYp45lIM"
   },
   {
     "artist": "Neurocore",
-    "track": "Souvenirs Du Futur"
+    "track": "Souvenirs du futur",
+    "uri": "spotify:track:7pGxhEqHMd03JZ31dd6PLL"
   },
   {
     "artist": "Radium",
-    "track": "Schizophone"
+    "track": "Schizophone",
+    "uri": "spotify:track:374FCqaGxOqu236I0RiuSM"
   },
   {
     "artist": "Skyrosphere",
-    "track": "Surface of the Planet"
+    "track": "Surface of the Planet",
+    "uri": "spotify:track:2n7viMgKJh16Ptokzdzf3Z"
   },
   {
     "artist": "Angerfist",
-    "track": "Messing With The Wrong Man"
+    "track": "Messing With The Wrong Man",
+    "uri": "spotify:track:1oykmWYKHliRErH6X1E6PW"
   },
   {
     "artist": "Dirty Bastards",
-    "track": "Real Bastards"
+    "track": "Real Bastards",
+    "uri": "spotify:track:26O9wfc6vLALi0T0gmDm2A"
   },
   {
     "artist": "Destructive Tendencies",
-    "track": "I'll Let You Have Your Day"
+    "track": "I'll Let You Have Your Day",
+    "uri": "spotify:track:7FTxmaGIqaZLhbOR5UhQRF"
   },
   {
     "artist": "Rude Awakening",
-    "track": "Riding Dirty"
+    "track": "Riding dirty",
+    "uri": "spotify:track:5XSGS2PlCvPoN7d7Hruw1f"
   },
   {
     "artist": "The bird and the bee",
-    "track": "Love letter to japan"
+    "track": "Love Letter To Japan",
+    "uri": "spotify:track:6BPH36SnzhPIYxOYVchQQR"
   },
   {
     "artist": "Javi Boss",
-    "track": "Bloody Hand"
+    "track": "Bloody Hand",
+    "uri": "spotify:track:58iKkWuCtImei3OvvblLqj"
   },
   {
     "artist": "Tuneboy",
-    "track": "tell me about it"
+    "track": "tell me about it",
+    "uri": "spotify:track:0Whypl21N5qnl9arHQkBBv"
   },
   {
     "artist": "Asura",
-    "track": "Like a Summer Day"
+    "track": "Like a Summer Day",
+    "uri": "spotify:track:0fZTR65XCiD8rsORgCNCdM"
   },
   {
     "artist": "Atmozfears",
-    "track": "Rip The Jacker"
+    "track": "Rip The Jacker",
+    "uri": "spotify:track:3sKk1Wo5Hleh0u7en8fHB4"
   },
   {
     "artist": "In-Phase",
-    "track": "Cold & Fire"
+    "track": "Cold & Fire",
+    "uri": "spotify:track:3h7kjqrcQTDGymEpBY0U27"
   },
   {
     "artist": "Borgore",
-    "track": "Kiss My Lips"
+    "track": "Kiss My Lips",
+    "uri": "spotify:track:6djvOSgu4IvgIghmDPJyEn"
   },
   {
     "artist": "Camo & Krooked",
-    "track": "Get Dirty"
+    "track": "Get Dirty",
+    "uri": "spotify:track:2i2mzb4vOI85KHYPqdwy4v"
   },
   {
     "artist": "Noisecontrollers",
-    "track": "E=nc2"
+    "track": "E=nc2",
+    "uri": "spotify:track:3wVq6fPs4zcYZg1MbL2mgw"
   },
   {
     "artist": "The Stunned Guys & Darrien Kelly",
-    "track": "Our definition of the old style"
+    "track": "Our definition of the old style",
+    "uri": "spotify:track:4JDkTXILgOFSbkBhxOTQZv"
   },
   {
     "artist": "Omegatypez",
-    "track": "Dirty Style"
+    "track": "Dirty Style",
+    "uri": "spotify:track:1DFGH8S53iyk4MGm1IAYhk"
   },
   {
     "artist": "Art of Fighters",
-    "track": "Toxic hotel"
+    "track": "Toxic hotel",
+    "uri": "spotify:track:0K2JKs1RSxFXmatF8y66hC"
   },
   {
     "artist": "Technoboy",
-    "track": "Re-invent Yourself"
+    "track": "Re-invent Yourself",
+    "uri": "spotify:track:4YzEN5rAeUyYiz0XXoWTU2"
   },
   {
     "artist": "Angerfist",
-    "track": "Bloodrush"
+    "track": "Bloodrush",
+    "uri": "spotify:track:7LQFcuvNw5ennB5dXkE2hY"
   },
   {
     "artist": "Donny",
-    "track": "Ten Tonne Hammer"
+    "track": "Ten Tonne Hammer",
+    "uri": "spotify:track:7G2gJHjI6MdWASRXqOHESI"
   },
   {
     "artist": "Roughsketch",
-    "track": "Distorted Children"
+    "track": "Distorted Children",
+    "uri": "spotify:track:06R8vbVMe3ezSn3m7xkcgJ"
   },
   {
     "artist": "Moshpit",
-    "track": "Despise Disdain"
+    "track": "Despise Disdain",
+    "uri": "spotify:track:02GNIAeEEQeCShCKBPPpGt"
   },
   {
     "artist": "Moshpit",
-    "track": "Follow the Loser"
+    "track": "Follow The Loser",
+    "uri": "spotify:track:1wFE9XrTeGxRkMEgW0OcdZ"
   },
   {
     "artist": "Moshpit",
-    "track": "Souvenirs And Other Tumours"
+    "track": "Souvenirs And Other Tumours",
+    "uri": "spotify:track:1aV7GwdTaRyBZeJ8jrv1Bl"
   },
   {
     "artist": "Moshpit",
-    "track": "Sell Outs Until Death"
+    "track": "Sell Outs Until Death",
+    "uri": "spotify:track:1fR0kW5JxyilmRRkCkiVgX"
   },
   {
     "artist": "Moshpit",
-    "track": "Teenage Anthem"
+    "track": "Teenage Anthem",
+    "uri": "spotify:track:63QOgxcWQyCQbxxY1fG9VQ"
   },
   {
     "artist": "Moshpit",
-    "track": "Popular Facts"
+    "track": "Popular Facts",
+    "uri": "spotify:track:5YppH2vibltTe8xDWy2Gs5"
   },
   {
     "artist": "Moshpit",
-    "track": "I Don't Want What I Can Have"
+    "track": "I Don't Want What I Can Have",
+    "uri": "spotify:track:3Rjcx8l9hBPpCeSqhCARzm"
   },
   {
     "artist": "Coone",
-    "track": "The Prime Target"
+    "track": "The Prime Target",
+    "uri": "spotify:track:6QFAVzL1gZp22chbKeeQik"
   },
   {
     "artist": "Shekel",
-    "track": "Supanova"
+    "track": "Supanova",
+    "uri": "spotify:track:5K3sgOgTIlutQ9MUtj2eXy"
   },
   {
     "artist": "Frontliner",
-    "track": "Lose The Style"
+    "track": "Lose The Style",
+    "uri": "spotify:track:76VH3ji18Row9M7aUYByfx"
   },
   {
     "artist": "Example",
-    "track": "Never Had a Day"
+    "track": "Never Had a Day",
+    "uri": "spotify:track:3XWqp5lWX7AREoZcClhKVH"
   },
   {
     "artist": "Harry Potar",
-    "track": "Slightly Little Small Rocks"
+    "track": "Slightly Little Small Rocks",
+    "uri": "spotify:track:32kKjKVx3Pk9baBXq3a4Dx"
   },
   {
     "artist": "The Anarchist",
-    "track": "Outrageouz"
+    "track": "Outrageouz",
+    "uri": "spotify:track:1ykGKku7Stk6Rk50F4SBxS"
   },
   {
     "artist": "Neelix",
-    "track": "Toxic Evolution"
+    "track": "Toxic Evolution",
+    "uri": "spotify:track:2VtpOfCQ1VKSNsrAyLKzkw"
   },
   {
     "artist": "H2K",
-    "track": "Summermelody (Original Mix)"
+    "track": "Summermelody (Original Mix)",
+    "uri": "spotify:track:5sIny8A0JSCV0u6f8UzPLE"
   },
   {
     "artist": "Noisia",
-    "track": "Shellshock"
+    "track": "Shellshock",
+    "uri": "spotify:track:4Di1KgkKPeLEZOdbauApjr"
   },
   {
     "artist": "Forbidden Society",
-    "track": "Dull Flame Of Desire"
+    "track": "Dull Flame Of Desire",
+    "uri": "spotify:track:1H1Oa1AeBjkQHLlwdD4A1s"
   },
   {
     "artist": "Technoboy",
-    "track": "Vanilla Sky"
+    "track": "Vanilla Sky",
+    "uri": "spotify:track:2M0NjWAcKqyvwYBSuuX44P"
   },
   {
     "artist": "Stormtrooper",
-    "track": "Sweet Poisonous Lips"
+    "track": "Sweet Poisonous Lips",
+    "uri": "spotify:track:7tw3Obl3xj6Zml56MYuwwL"
   },
   {
     "artist": "ValkyR",
-    "track": "Calvaire"
+    "track": "Calvaire",
+    "uri": "spotify:track:59pbpznRpTkS18IMfvpm9L"
   },
   {
     "artist": "Dave Darell",
-    "track": "Keep Your Hands Up"
+    "track": "Keep Your Hands Up",
+    "uri": "spotify:track:3EGXXUSU58pL38tVLgpd5O"
   },
   {
     "artist": "Technical Itch",
-    "track": "The Cleansing Fire"
+    "track": "The Cleansing Fire",
+    "uri": "spotify:track:4zvlCB1EHMpwOGM4HQBq1W"
   },
   {
     "artist": "Wedlock",
-    "track": "I'm The Fuck You Man"
+    "track": "I'm The Fuck You Man",
+    "uri": "spotify:track:4Pqneu4A3rvjPujksDy0Hf"
   },
   {
     "artist": "Micropoint",
-    "track": "Crackpipe"
+    "track": "Crackpipe",
+    "uri": "spotify:track:2jZmhQhsSRqqsZmMMedVeo"
   },
   {
     "artist": "Morgan Page",
-    "track": "Fight For You"
+    "track": "Fight For You",
+    "uri": "spotify:track:20soab2IrsPOE5JXqJsURk"
   },
   {
     "artist": "Babylon Disco",
-    "track": "I Fucking Hate Myself"
+    "track": "I Fucking Hate Myself",
+    "uri": "spotify:track:5zcKlAuVnFtBKX0VjxKsQ8"
   },
   {
     "artist": "Psyko Punkz",
-    "track": "Left With The Wrong"
+    "track": "Left With The Wrong",
+    "uri": "spotify:track:2S1r4ddcsqSMD3XOmpqxBO"
   },
   {
     "artist": "The bird and the bee",
-    "track": "Love Letter To Japan"
+    "track": "Love Letter To Japan",
+    "uri": "spotify:track:6BPH36SnzhPIYxOYVchQQR"
   },
   {
     "artist": "Donkey Rollers",
-    "track": "So You Wanna Be Hardcore"
+    "track": "So You Wanna Be Hardcore",
+    "uri": "spotify:track:3VUEaLVg1PLgu56oB7RNVg"
   },
   {
     "artist": "Tom Misch & Carmody",
-    "track": "We Used To Know"
+    "track": "We Used To Know",
+    "uri": "spotify:track:6JbxxizayOgvlj9f27a1fx"
   },
   {
     "artist": "Rammstein",
-    "track": "Zwitter"
+    "track": "Zwitter",
+    "uri": "spotify:track:5NSoxlB4utD51hYMAZpIdV"
   },
   {
     "artist": "Sesto Sento",
-    "track": "P.L.U.R."
+    "track": "P.L.U.R.",
+    "uri": "spotify:track:3UdxXwC5NFdkZy4mI9pthR"
   },
   {
     "artist": "The Prophet",
-    "track": "Dominatin'"
+    "track": "Dominatin'",
+    "uri": "spotify:track:4lGnW4EphuDedGQxa0XQxk"
   },
   {
     "artist": "Malukah",
-    "track": "Reignite"
+    "track": "Reignite",
+    "uri": "spotify:track:4W0JcQ8Dh8EFxBv7bNUgpT"
   },
   {
     "artist": "Mindestruction",
-    "track": "Drug Disaster"
+    "track": "Drug Disaster",
+    "uri": "spotify:track:60ZiQjYWovESBJxRu8tkMe"
   },
   {
     "artist": "In Extremo",
-    "track": "Rasend Herz"
+    "track": "Rasend Herz",
+    "uri": "spotify:track:6Y5voKBWbFBCb1YjM8i7QU"
   },
   {
     "artist": "Rammstein",
-    "track": "KEINE LUST"
+    "track": "KEINE LUST",
+    "uri": "spotify:track:29YDZUNKvBI2I64TvLj1Wt"
   },
   {
     "artist": "Venetian Snares",
-    "track": "Welfare Wednesday"
+    "track": "Welfare Wednesday",
+    "uri": "spotify:track:5MRQZbZLRzh7WLX2Gti3Av"
   },
   {
     "artist": "Concept Art",
-    "track": "We've Got The World"
+    "track": "We've Got The World",
+    "uri": "spotify:track:7DLEGyyuXl2Y5mCsiy4oI3"
   },
   {
     "artist": "Hard Driver",
-    "track": "Came to This"
+    "track": "Came to This",
+    "uri": "spotify:track:2uIbrAEsNqzz3aa48ig3AD"
   },
   {
     "artist": "Dark Moon",
-    "track": "Zeitreise"
+    "track": "Zeitreise",
+    "uri": "spotify:track:2X1BlR0sK1PYXpAc3PDPnP"
   },
   {
     "artist": "T-Junction",
-    "track": "The 4th Kind"
+    "track": "The 4th Kind",
+    "uri": "spotify:track:4grKyJzgf0Nm1oP6KyYsZa"
   },
   {
     "artist": "AniMe",
-    "track": "Hands up (feat. Tha Suspect)"
+    "track": "Hands up (feat. Tha Suspect)",
+    "uri": "spotify:track:5Gb6zns55Jix7FoClMT8z4"
   },
   {
     "artist": "The Pitcher",
-    "track": "Who I Wanna Be"
+    "track": "Who I Wanna Be",
+    "uri": "spotify:track:5sbFfOHAuZ1MtFGyupqKoo"
   },
   {
     "artist": "Khaoz Engine",
-    "track": "The Cursed Beast"
+    "track": "The Cursed Beast",
+    "uri": "spotify:track:536NGXMu3m5oaRZrte2Cne"
   },
   {
     "artist": "Khaoz Engine",
-    "track": "Dogshit"
+    "track": "Dogshit",
+    "uri": "spotify:track:7pMHEhPivHIj4rTvNas2SG"
   },
   {
     "artist": "KnightVision",
-    "track": "Who Is It? - Nosferatu Remix"
+    "track": "Who Is It? - Nosferatu Remix",
+    "uri": "spotify:track:7F2qX79MS6KKlUuUMWlmQa"
   },
   {
     "artist": "D-Block & S-Te-Fan",
-    "track": "Twisted Mind Fantasy"
+    "track": "Twisted Mind Fantasy",
+    "uri": "spotify:track:6CMoYnqzvIabCQ2hs9K5Q3"
   },
   {
     "artist": "Alan",
-    "track": "Musical Infection"
+    "track": "Musical Infection",
+    "uri": "spotify:track:4cWVJy0kx77OHRiBsym9uV"
   },
   {
     "artist": "Trackloaders",
-    "track": "Empire of Oppression"
+    "track": "Empire of Oppression",
+    "uri": "spotify:track:4rmskWhYFMWVOq0xr6erak"
   },
   {
     "artist": "Sinister Souls",
-    "track": "Skullsplitter"
+    "track": "Skullsplitter",
+    "uri": "spotify:track:2iCsVPZMtNmWI7lA41NDaC"
   },
   {
     "artist": "Coone",
-    "track": "Colors Of Life"
+    "track": "Colors Of Life",
+    "uri": "spotify:track:4TBkdBPOvz9dRrsq2B4tsO"
   },
   {
     "artist": "DJ Ocram",
-    "track": "Who The F... Is Chuck Norris?"
+    "track": "Who The F... Is Chuck Norris?",
+    "uri": "spotify:track:38xQcQc76rg299Xr1ugq95"
   },
   {
     "artist": "D-Passion",
-    "track": "Taking Back Our Rights"
+    "track": "Taking Back Our Rights",
+    "uri": "spotify:track:6CPfJ1IExi2fFDaDf2bCH5"
   },
   {
     "artist": "Hellsystem",
-    "track": "Devil Face"
+    "track": "Devil Face",
+    "uri": "spotify:track:1oSenBJevps3oM7dJr4QLs"
   },
   {
     "artist": "Drokz",
-    "track": "This Ain't No Disco"
+    "track": "This Ain't No Disco",
+    "uri": "spotify:track:0frzYCg3rNsjAIit45rH7m"
   }
 ]

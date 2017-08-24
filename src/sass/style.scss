@@ -24,16 +24,17 @@ ul {
   background-color: $card-color;
   box-shadow: $shadow;
   cursor: pointer;
-  display: flex;
-  font-size: 1.5rem;
+  display: flex; //font-size: 1.5rem;
+  height: 390px;
   margin: $margin;
-  min-height: 390px;
-  min-width: 320px;
+  padding: 30px;
+  text-align: center;
   transition: $snappy-hover;
+  width: 320px;
 
   &:hover {
     box-shadow: $shadow-hover;
-  }
+    }
 }
 
 .background--gradient {
@@ -42,6 +43,7 @@ ul {
   flex-direction: row;
   height: 100vh;
   overflow: scroll;
+  padding: 3.125em 3.125em 0 0;
   position: absolute;
   width: 100vw;
   z-index: -2;
@@ -67,6 +69,7 @@ ul {
   &:hover {
     background-color: $white90;
     box-shadow: $shadow-hover;
+    color: $accent-color;
     transition: $snappy-hover;
   }
 }
@@ -101,7 +104,7 @@ ul {
   display: flex;
   flex-direction: column;
   flex-grow: 5;
-  justify-content: flex-start;
+  justify-content: center;
 
   p {
     align-items: center;
@@ -126,7 +129,7 @@ ul {
 
 .play-button {
   align-items: center;
-  background: $white50;
+  background: $white;
   border: 0;
   border-radius: 50%;
   display: flex;

@@ -59,7 +59,7 @@ const getWatsonData = (callback) => {
       'collection_id': process.env.CFCI_WATSON_COLLECTION_ID,
       'query_string': '',
       count,
-      'offset': count * 11,
+      'offset': count * 13,
     },
     (error, data) => {
       if (error) {
