@@ -27,12 +27,9 @@ ul {
   display: flex;
   font-size: 1.5rem;
   margin: $margin;
-  max-height: 390px;
-  max-width: 320px;
-  min-height: 193px;
-  min-width: 160px;
+  height: 390px;
+  width: 320px;
   transition: $snappy-hover;
-
   &:hover {
     box-shadow: $shadow-hover;
   }
@@ -47,6 +44,7 @@ ul {
   position: absolute;
   width: 100vw;
   z-index: -2;
+  padding: 3.125em 3.125em 0 0;
 }
 
 .controls {
@@ -69,6 +67,7 @@ ul {
   &:hover {
     background-color: $white90;
     box-shadow: $shadow-hover;
+    color: $accent-color;
     transition: $snappy-hover;
   }
 }
@@ -128,7 +127,7 @@ ul {
 
 .play-button {
   align-items: center;
-  background: $white50;
+  background: #ffffff;
   border: 0;
   border-radius: 50%;
   display: flex;
