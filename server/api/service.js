@@ -127,13 +127,16 @@ const getLyrics = () => {
                           _.unset(spotifyInfo, 'available_markets');
                           _.unset(spotifyInfo, 'album.available_markets');
                           lyrics.push({
-                            artist: current.artist,
-                            track: current.track,
+                            artist: spotifyInfo.artists[0].name,
+                            track: spotifyInfo.name,
+                            trackNumber: spotifyInfo.track_number,
                             lyrics: songLyrics.lyrics,
                             album: songLyrics.album,
                             year: songLyrics.year,
-                            cover: songLyrics.cover ? songLyrics.cover : undefined,
-                            spotifyInfo,
+                            cover: spotifyInfo.album.images,
+                            playLink: spotifyInfo.external_urls.spotify,
+                            previewLink: spotifyInfo.preview_url,
+                            popularity: spotifyInfo.popularity,
                           });
                         });
                     }
