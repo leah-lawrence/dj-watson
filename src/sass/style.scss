@@ -27,8 +27,10 @@ ul {
   display: flex;
   font-size: 1.5rem;
   margin: $margin;
-  min-height: 390px;
-  min-width: 320px;
+  max-height: 390px;
+  max-width: 320px;
+  min-height: 193px;
+  min-width: 160px;
   transition: $snappy-hover;
 
   &:hover {
