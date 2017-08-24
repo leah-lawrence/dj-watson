@@ -102,9 +102,17 @@ ul {
   flex-direction: column;
   flex-grow: 5;
   justify-content: flex-start;
-
+  
   p {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
     padding-top: 11px;
+    text-overflow: ellipsis;
+    width: 300px;
+    white-space: nowrap;
+    
   }
 }
 

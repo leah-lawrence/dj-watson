@@ -26,7 +26,7 @@
         ];
   
         $scope.cards = 'loading';
-        $http.get($location.absUrl() + '/api/getWatsonData')
+        $http.get($location.absUrl() + 'api/getWatsonData')
           .then(function gotResponse(response) {
             $scope.cards = response.data.results;
           })
@@ -37,26 +37,23 @@
         $scope.handleCardClick = function handleCardClick() {
           this.card.selected = true;
   
-          // $scope.cards.forEach(function(card) {
-          //   if (card != this.card) {
-          //     card.selected = false;
-          //   }
-          // }.bind(this));
+          $scope.cards.forEach(function (card) {
+            if (card !== this.card) {
+              card.selected = false;
+            }
+          }.bind(this));
         };
   
         $scope.handleControlClick = function handleControlClick() {
           $scope.selectedFilter = '-enriched_lyrics.emotion.document.emotion.'+this.filter.name; // eslint-disable-line space-infix-ops
-          // $scope.filters.forEach(function(filter) {
-          //   if (filter != this.filter) {
-          //     filter.selected = false;
-          //   }
-          // }.bind(this))
         };
   
-        $scope.characterFilter = function characterFilter(string) {
-          return string.replace('&amp;', ' ').replace('lrm;&ndash;', ' ').replace('auml;th', ' ').replace('fuck', 'f***').replace('Fuck', 'F***');
+        $scope.characterFilter = function characterFilter(filterString) {
+          if (filterString) {
+            return filterString.replace('&amp;', ' ').replace('lrm;&ndash;', ' ').replace('auml;th', ' ').replace('fuck', 'f***').replace('Fuck', 'F***');            
+          }
         };
-      },     
+      },
     ]
   );
 }());
