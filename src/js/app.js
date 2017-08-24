@@ -44,8 +44,8 @@
           }.bind(this));
         };
 
-        $scope.handleControlClick = function handleControlClick() {
-          $scope.selectedFilter = '-enriched_lyrics.emotion.document.emotion.'+this.filter.name; // eslint-disable-line space-infix-ops
+        $scope.handleControlClick = function handleControlClick(order) {
+          $scope.selectedFilter = order+'enriched_lyrics.emotion.document.emotion.'+this.filter.name; // eslint-disable-line space-infix-ops
         };
 
         $scope.characterFilter = function characterFilter(filterString) {
@@ -54,6 +54,10 @@
           }
 
           return undefined;
+        };
+
+        $scope.sortByDate = function sortByDate(order) {
+          $scope.dateSortOrder = order + 'year';
         };
       },
     ]
