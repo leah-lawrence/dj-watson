@@ -44,13 +44,11 @@ const postDataToWatson = (songs) => {
 
 const transformData = (watsonData) => {
   return watsonData.map(data => {
-    return {
-      'id': data.id,
-      'album': data.album,
-      'artist': data.artist,
-      'cover': data.cover,
-      'enriched_lyrics': data.enriched_lyrics, // eslint-disable-line camelcase
-    };
+    Object.keys(data.enriched_lyrics.emotion.document.emotion).forEach(score => {
+      data.enriched_lyrics.emotion.document.emotion[score] *= 10000; // eslint-disable-line no-param-reassign
+    });
+
+    return data;
   });
 };
 

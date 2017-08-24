@@ -23,12 +23,13 @@
   <body ng-controller="myCtrl">
     <div class="background background--gradient">
       <nav class="controls">
-        <button class="control control--button" ng-repeat="filter in filters" ng-click="handleControlClick($event)" ng-class="{'filter--selected':filter.selected}" alt="{{filter.name}}">
-          <img ng-src="images/{{filter.name}}-emoticon.png" alt="{{filter.name}}" />
+        <button class="control control--button" ng-repeat="filter in filters" ng-click="handleControlClick($event)" ng-class="{'filter--selected':filter.selected}">
+          <img src="{{'images/' + filter.name + '-emoticon.png'}}" alt="{{filter.name}}" /> 
         </button>
       </nav>
       <ul class='list-inline'>
-        <li class="card" ng-repeat="card in cards" ng-click="handleCardClick()" ng-class="{'card--selected': card.selected}">
+        <li class="card" ng-repeat="card in cards | orderBy:selectedFilter" ng-click="handleCardClick()" ng-class="{'card--selected': card.selected}" ng-hide="card.cover===undefined">
+
           <div class="card--albumcover">
             <div style="background-image: url({{card.cover ? card.cover : 'images/cover.jpg'}})" ng-class="{'card-cover-default': !card.cover}" class="card--albumcover--circle">
               <button class="play-button">
@@ -37,8 +38,9 @@
             </div>
           </div>
           <div class="card--info">
-            <p class="card--albumname">{{card.album}}</p>
-            <p class="card--artistname">{{card.artist}}</p>
+            <p class="card--artistname">{{characterFilter(card.track)}}</p>
+            <p class="card--artistname">{{characterFilter(card.artist)}}</p>
+            <p class="card--albumname">{{characterFilter(card.album)}}</p>
           </div>
         </li>
       </ul>
