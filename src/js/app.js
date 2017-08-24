@@ -27,7 +27,7 @@
         ];
 
         $scope.cards = 'loading';
-        $http.get($location.absUrl() + '/api/getWatsonData')
+        $http.get($location.absUrl() + 'api/getWatsonData')
           .then(function gotResponse(response) {
             $scope.cards = response.data.results;
           })
