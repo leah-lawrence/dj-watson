@@ -7,7 +7,7 @@
 
   angularApp .controller(
     'myCtrl',
-    function ctrl($scope, $http, $location) {
+    function ($scope, $http, $location) {
       $scope.activeControl = null;
       $scope.filters = [
         {
