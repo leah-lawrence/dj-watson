@@ -14,12 +14,19 @@
   </head>
 
   <body ng-controller="myCtrl">
-    <div id="cards-background" class="background background--gradient" ng-click="clickBlank($event)">
-      <nav id="cards-nav" class="controls">
+    <nav class="landing--experience">
+      <h1>DJ <span>Watson</span></h1>
+      <!-- <button class="landing--experience__button"><h3>Get started</h3></button> -->
+      <div class="guidance">
+        <img src="images/arrow.svg" alt="" />
+        <h3 class="guidance--copy">Filter to find music</h3>
+      </div>
+    </nav>
+    <nav id="cards-nav" class="controls">
         <button ng-repeat="filter in filters" class="control control--button" ng-class="{'filter--selected':filter.selected}" ng-click="handleControlClick('-')">
           <img ng-src="{{getImageName(filter.name)}}" alt="{{filter.name}}"/>
         </button>
-        <nav class="controls">
+        <nav ng-hide="!selectedFilter" class="date--controls">
           <button class="control control--button" ng-click="sortByDate('-')" ng-class="{'filter--selected':filter.selected}">
             New to Old
           </button>
@@ -31,6 +38,7 @@
           </button>
         </nav>
       </nav>
+    <div id="cards-background" class="background background--gradient" ng-click="clickBlank($event)">
       <ul id="cards-list" class='list-inline'>
         <li class="card" ng-repeat="card in cards | orderBy:selectedFilter | orderBy:dateSortOrder" ng-click="handleCardClick()" ng-class="{'card--selected': card.selected}" ng-hide="card.cover===undefined">
           <div class="likes">{{card.spotifyInfo.popularity ? card.spotifyInfo.popularity: 0}} Likes</div>
@@ -42,9 +50,12 @@
             </div>
           </div>
           <div class="card--info">
-            <p class="card--artistname">{{characterFilter(card.track)}}</p>
-            <p class="card--artistname">{{characterFilter(card.artist)}}</p>
-            <p class="card--artistname">{{card.year}}</p>
+            <p class="card--trackname">{{characterFilter(card.track) | limitTo: 10}}<span ng-show="characterFilter(card.track).length > 10">...</span></p>
+            <p class="card--artistname">
+              {{characterFilter(card.artist) | limitTo: 10}}
+              <span ng-show="characterFilter(card.track).length > 10">...</span>
+              {{' - ' + card.year}}
+            </p>
           </div>
         </li>
       </ul>

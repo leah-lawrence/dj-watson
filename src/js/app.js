@@ -57,8 +57,14 @@
           }
         };
 
+
         $scope.handleControlClick = function handleControlClick(order) {
+          var landing = document.querySelector('.landing--experience');
           $scope.selectedFilter = order+'enriched_lyrics.emotion.document.emotion.'+this.filter.name; // eslint-disable-line space-infix-ops
+          landing.style.opacity = 0;
+          window.setTimeout(function timeOut() {
+            landing.style.display = 'none';
+          }, 500);
         };
 
         $scope.characterFilter = function characterFilter(filterString) {
