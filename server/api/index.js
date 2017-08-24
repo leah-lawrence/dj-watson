@@ -7,6 +7,8 @@ const watsonApi = require('./watsonApi.js');
 const controller = require('./controller');
 
 router.get('/getLyrics', controller.getLyrics);
+router.get('/getSpotifyAccessCode', controller.getSpotifyAccessCode);
+
 router.get('/postLyricsToWatson', controller.postLyricsToWatson);
 
 router.get('/getWatsonData', (req, res) => {
