@@ -27,6 +27,7 @@
     <nav role="tablist" id="cards-nav" class="controls">
       <button ng-repeat="filter in filters" class="control control--button" ng-class="{'filter--selected':(filter.selected || isControlFilterSelected(filter))}" ng-click="handleControlClick('-')">
         <img ng-src="{{getImageName(filter.name)}}" alt="{{filter.name}} filter" aria-controls="cards-list"/>
+        <p ng-hide="adjectives[filter.name].clicked">{{adjectives[filter.name].name}}</p>
       </button>
 
       <nav ng-disabled="!selectedFilter" ng-hide="!selectedFilter" class="date--controls">
