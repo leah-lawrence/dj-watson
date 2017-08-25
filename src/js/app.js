@@ -128,7 +128,9 @@
           landing.style.opacity = 0;
           localStorage.setItem('selectedFilter', $scope.selectedFilter);
           window.setTimeout(function timeOut() {
+            var firstCard = document.querySelector('.js-aria-image');
             landing.style.display = 'none';
+            firstCard.focus();
           }, 500);
         };
 
