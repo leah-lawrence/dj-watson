@@ -221,6 +221,10 @@ ul {
   top: 5px;
 }
 
+.circular-spin {
+  animation: spin 1.33s linear 22.55;
+}
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);
