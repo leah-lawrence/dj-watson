@@ -27,6 +27,7 @@
     <nav role="tablist" id="cards-nav" class="controls">
       <button ng-repeat="filter in filters" class="control control--button" ng-class="{'filter--selected':(filter.selected || isControlFilterSelected(filter))}" ng-click="handleControlClick('-')">
         <img ng-src="{{getImageName(filter.name)}}" alt="{{filter.name}} filter" aria-controls="cards-list"/>
+        <p ng-hide="adjectives[filter.name].clicked">{{adjectives[filter.name].name}}</p>
       </button>
 
       <nav ng-disabled="!selectedFilter" ng-hide="!selectedFilter" class="date--controls">
@@ -66,6 +67,15 @@
               <span ng-show="characterFilter(card.track).length > 25">...</span>
               {{' - ' + card.year}}
             </p>
+          </div>
+          <div class="emotion-bar-anger-background" ng-if="isControlFilterSelected(filters[0])">
+            <div class="emotion-bar-anger" style="width: {{card.emotionPercentage.anger}};"></div>
+          </div>
+          <div class="emotion-bar-joy-background" ng-if="isControlFilterSelected(filters[1])">
+            <div class="emotion-bar-joy" style="width: {{card.emotionPercentage.joy}};"></div>
+          </div>
+          <div class="emotion-bar-sadness-background" ng-if="isControlFilterSelected(filters[2])">
+            <div class="emotion-bar-sadness" style="width: {{card.emotionPercentage.sadness}};"></div>
           </div>
         </li>
       </ul>
