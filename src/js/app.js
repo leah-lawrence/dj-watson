@@ -63,16 +63,12 @@
           }
         });
 
-        $http.get('http://' + $location.host() + ':' + $location.port() + '/api/getWatsonData')
+        $http.get('api/getWatsonData')
           .then(function gotResponse(response) {
             $scope.cards = response.data.results;
-            console.log('cards =');
-            console.log($scope.cards);
           })
           .catch(function errorOnGet(error) {
             $scope.cards = error;
-            console.log('error =');
-            console.log($scope.cards);
           });
 
         $scope.handleCardClick = function handleCardClick() {
