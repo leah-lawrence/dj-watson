@@ -80,9 +80,19 @@
 
         $scope.audioObj = [];
 
+        $scope.getEmotionPercentage = function getEmotionPercentage() {
+          $scope.cards.forEach(function (card) {
+            card.emotionPercentage = {};
+            card.emotionPercentage.joy = parseInt(card.enriched_lyrics.emotion.document.emotion.joy / 100, 10) + '%';
+            card.emotionPercentage.anger = parseInt(card.enriched_lyrics.emotion.document.emotion.anger / 100, 10) + '%';
+            card.emotionPercentage.sadness = parseInt(card.enriched_lyrics.emotion.document.emotion.sadness / 100, 10) + '%';
+          });
+        };
+
         $http.get('api/getWatsonData')
           .then(function gotResponse(response) {
             $scope.cards = response.data.results;
+
             $scope.cards
               .filter(function each(eachCard) {
                 return eachCard.spotifyInfo !== undefined;
@@ -91,6 +101,8 @@
                 $scope.audioObj[eachCard.spotifyInfo.id] =
                   new Audio(eachCard.spotifyInfo.preview_url + '.mp3');
               });
+
+            $scope.getEmotionPercentage();
           })
           .catch(function errorOnGet(error) {
             $scope.cards = error;
