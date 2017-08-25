@@ -174,10 +174,10 @@ ul {
   border-color: $accent-color;
   border-radius: 50%;
   display: flex;
-  height: 230px;
+  height: 220px;
   justify-content: center;
   position: relative;
-  width: 230px;
+  width: 220px;
 }
 
 .card--info {
@@ -228,9 +228,15 @@ ul {
   border: 0;
   border-radius: 50%;
   display: flex;
-  height: 77px;
+  height: 4em;
   justify-content: center;
-  width: 77px;
+  width: 4em;
+  padding: 0;
+  margin: 0;
+  img {
+  height: 3em;
+  width: 3em;
+  }
 }
 
 .landing--experience {
