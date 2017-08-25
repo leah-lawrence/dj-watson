@@ -23,21 +23,22 @@
       </div>
     </nav>
     <nav id="cards-nav" class="controls">
-        <button ng-repeat="filter in filters" class="control control--button" ng-class="{'filter--selected':(filter.selected || isControlFilterSelected(filter))}" ng-click="handleControlClick('-')">
-          <img ng-src="{{getImageName(filter.name)}}" alt="{{filter.name}}"/>
+      <button ng-repeat="filter in filters" class="control control--button" ng-class="{'filter--selected':(filter.selected || isControlFilterSelected(filter))}" ng-click="handleControlClick('-')">
+        <img ng-src="{{getImageName(filter.name)}}" alt="{{filter.name}}"/>
+      </button>
+
+      <nav ng-hide="!selectedFilter" class="date--controls">
+        <button class="control control--button" ng-click="sortByDate('-')" ng-class="{'filter--selected':(filter.selected || isSortFilterIsSelected('-'))}">
+          New to Old
         </button>
-        <nav ng-hide="!selectedFilter" class="date--controls">
-          <button class="control control--button" ng-click="sortByDate('-')" ng-class="{'filter--selected':(filter.selected || isSortFilterIsSelected('-'))}">
-            New to Old
-          </button>
-          <button class="control control--button" ng-click="sortByDate('+')" ng-class="{'filter--selected':(filter.selected || isSortFilterIsSelected('+'))}">
-            Old to New
-          </button>
-          <button class="control control--button" ng-click="dateSortOrder=''" ng-class="{'filter--selected':(filter.selected || isSortFilterIsSelected(''))}">
-            Clear date
-          </button>
-        </nav>
+        <button class="control control--button" ng-click="sortByDate('+')" ng-class="{'filter--selected':(filter.selected || isSortFilterIsSelected('+'))}">
+          Old to New
+        </button>
+        <button class="control control--button" ng-click="sortByDate('')">
+          Clear date
+        </button>
       </nav>
+    </nav>
     <div id="cards-background" class="background background--gradient" ng-click="clickBlank($event)">
       <ul id="cards-list" class='list-inline'>
         <li class="card" ng-repeat="card in cards | orderBy:selectedFilter | orderBy:dateSortOrder track by $index" ng-click="handleCardClick()" ng-class="{'card--selected': card.selected, 'card--played': card.playing === false && !card.selected}" ng-hide="card.cover===undefined">
