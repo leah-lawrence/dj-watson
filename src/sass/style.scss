@@ -221,25 +221,46 @@ ul {
   top: 5px;
 }
 
-.emotion-bar-anger {
+.emotion-bar-anger-background{
   align-self: flex-start;
-  height: 10px;
-  width: 75%;
-  background-color: #FF5C49;
+  height: 12px;
+  width: 100%;
+  border: 1px solid #FF5C49;
+
+  .emotion-bar-anger {
+    align-self: flex-start;
+    height: 10px;
+    width: 75%;
+    background-color: #FF5C49;
+  }
 }
 
-.emotion-bar-joy {
+.emotion-bar-joy-background{
   align-self: flex-start;
-  height: 10px;
-  width: 75%;
-  background-color: #EEE8AA;
+  height: 12px;
+  width: 100%;
+  border: 1px solid #EEE8AA;
+
+  .emotion-bar-joy {
+    align-self: flex-start;
+    height: 10px;
+    width: 75%;
+    background-color: #EEE8AA;
+  }
 }
 
-.emotion-bar-sadness {
+.emotion-bar-sadness-background{
   align-self: flex-start;
-  height: 10px;
-  width: 75%;
-  background-color: #2d74da;
+  height: 12px;
+  width: 100%;
+  border: 1px solid #2D74DA;
+
+  .emotion-bar-sadness {
+    align-self: flex-start;
+    height: 10px;
+    width: 75%;
+    background-color: #2D74DA;
+  }
 }
 
 @keyframes spin {
