@@ -2,6 +2,7 @@
   'use strict';
 
   /* eslint-disable no-param-reassign */
+  /* eslint-disable no-console */
 
   var angularApp = angular.module('myApp', []); // eslint-disable-line no-undef
 
@@ -29,7 +30,7 @@
           state: 'none',
         };
 
-        $scope.cards = 'loading';
+        $scope.cards = [];
         $scope.selectedFilter = localStorage.getItem('selectedFilter');
         $scope.dateSortOrder = localStorage.getItem('dateSortOrder');
         if ($scope.selectedFilter) {
@@ -65,9 +66,13 @@
         $http.get('http://' + $location.host() + ':' + $location.port() + '/api/getWatsonData')
           .then(function gotResponse(response) {
             $scope.cards = response.data.results;
+            console.log('cards =');
+            console.log($scope.cards);
           })
           .catch(function errorOnGet(error) {
             $scope.cards = error;
+            console.log('error =');
+            console.log($scope.cards);
           });
 
         $scope.handleCardClick = function handleCardClick() {
