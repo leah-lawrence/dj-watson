@@ -290,8 +290,14 @@ ul {
   color: $white;
   left: 245px;
   position: absolute;
+  text-decoration: none;
   top: 5px;
 }
+
+.share--card--selected {
+  color: $accent-color;
+}
+
 
 .emotion-bar-anger-background {
   align-self: flex-start;
