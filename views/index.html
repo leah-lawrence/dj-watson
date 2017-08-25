@@ -51,6 +51,7 @@
       <ul id="cards-list" class='list-inline'>
         <li class="card" ng-repeat="card in cards | orderBy:selectedFilter | orderBy:dateSortOrder track by $index" ng-click="handleCardClick()" ng-class="{'card--selected': card.selected, 'card--played': card.playing === false && !card.selected}" ng-hide="card.spotifyInfo===undefined">
           <div class="likes">{{card.spotifyInfo.popularity ? card.spotifyInfo.popularity: 0}} Likes</div>
+          <div class="share" href="{{card.spotifyInfo['external_urls'].spotify}}">Full Song</div>
           <div ng-disabled="!selectedFilter" class="card--albumcover">
             <div ng-disabled="!selectedFilter" style="background-image: url({{card.cover ? card.cover : 'images/cover.jpg'}})" ng-class="{'card-cover-default': !card.cover, 'circular-spin': card.playing === true}" class="card--albumcover--circle" >
               <button ng-disabled="!selectedFilter" class="play-button" ng-click="spinCardVinyl(card)">

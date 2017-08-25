@@ -95,7 +95,7 @@ ul {
 }
 
 .filter--selected {
-  background-color: $white90;
+  background-color: mix($accent-color, $white90);
   color: $accent-color;
 }
 
@@ -216,6 +216,7 @@ ul {
 }
 
 .share {
+  color: $white;
   left: 245px;
   position: absolute;
   top: 5px;
