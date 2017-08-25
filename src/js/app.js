@@ -81,7 +81,7 @@
         $scope.audioObj = [];
 
         $scope.getEmotionPercentage = function getEmotionPercentage() {
-          $scope.cards.forEach(function (card) {
+          $scope.cards.forEach(function eachCard(card) {
             card.emotionPercentage = {};
             card.emotionPercentage.joy = parseInt(card.enriched_lyrics.emotion.document.emotion.joy / 100, 10) + '%';
             card.emotionPercentage.anger = parseInt(card.enriched_lyrics.emotion.document.emotion.anger / 100, 10) + '%';

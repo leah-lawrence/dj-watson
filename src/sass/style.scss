@@ -221,45 +221,45 @@ ul {
   top: 5px;
 }
 
-.emotion-bar-anger-background{
+.emotion-bar-anger-background {
   align-self: flex-start;
+  border: 1px solid mix($anger-red, $white);
   height: 12px;
   width: 100%;
-  border: 1px solid #FF5C49;
 
   .emotion-bar-anger {
     align-self: flex-start;
+    background-color: mix($anger-red, $white);
     height: 10px;
     width: 75%;
-    background-color: #FF5C49;
   }
 }
 
-.emotion-bar-joy-background{
+.emotion-bar-joy-background {
   align-self: flex-start;
+  border: 1px solid mix($joy-yellow, $white);
   height: 12px;
   width: 100%;
-  border: 1px solid #EEE8AA;
 
   .emotion-bar-joy {
     align-self: flex-start;
+    background-color: mix($joy-yellow, $white);
     height: 10px;
     width: 75%;
-    background-color: #EEE8AA;
   }
 }
 
-.emotion-bar-sadness-background{
+.emotion-bar-sadness-background {
   align-self: flex-start;
+  border: 1px solid mix($sadness-blue, $white);
   height: 12px;
   width: 100%;
-  border: 1px solid #2D74DA;
 
   .emotion-bar-sadness {
     align-self: flex-start;
+    background-color: mix($sadness-blue, $white);
     height: 10px;
     width: 75%;
-    background-color: #2D74DA;
   }
 }
 
