@@ -14,7 +14,7 @@
     <script src="js/app.js"></script>
   </head>
 
-  <body ng-controller="myCtrl">
+  <body aria-label="contains three filters. angry filter. joy filter. sadness filter." ng-controller="myCtrl">
     <nav class="landing--experience">
       <img class="watson-spinner" src="images/watson.png" alt="" />
       <h1>DJ <span>Watson</span></h1>
@@ -24,9 +24,9 @@
         <h3 class="guidance--copy">Filter to find music</h3>
       </div>
     </nav>
-    <nav id="cards-nav" class="controls">
+    <nav role="tablist" id="cards-nav" class="controls">
       <button ng-repeat="filter in filters" class="control control--button" ng-class="{'filter--selected':(filter.selected || isControlFilterSelected(filter))}" ng-click="handleControlClick('-')">
-        <img ng-src="{{getImageName(filter.name)}}" alt="{{filter.name}}"/>
+        <img ng-src="{{getImageName(filter.name)}}" alt="{{filter.name}} filter" aria-controls="cards-list"/>
       </button>
 
       <nav ng-disabled="!selectedFilter" ng-hide="!selectedFilter" class="date--controls">
@@ -54,7 +54,7 @@
           <div ng-disabled="!selectedFilter" class="card--albumcover">
             <div ng-disabled="!selectedFilter" style="background-image: url({{card.cover ? card.cover : 'images/cover.jpg'}})" ng-class="{'card-cover-default': !card.cover, 'circular-spin': card.playing === true}" class="card--albumcover--circle" >
               <button ng-disabled="!selectedFilter" class="play-button" ng-click="spinCardVinyl(card)">
-                <img src="images/play-button.svg" alt="play"/>
+                <img tabindex="-1" class="js-aria-image" src="images/play-button.svg" alt="play" aria-label="track title: {{card.track}}. click to play."/>
               </button>
             </div>
           </div>
