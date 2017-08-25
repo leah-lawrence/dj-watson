@@ -226,3 +226,10 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+.watson-spinner {
+  animation: spin 2.66s linear infinite;
+  height: 100px;
+  margin-bottom: 25px;
+  transform-origin: 50% 61.4%;
+}
