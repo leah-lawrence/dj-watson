@@ -78,9 +78,19 @@
           }
         });
 
+        $scope.audioObj = [];
+
         $http.get('api/getWatsonData')
           .then(function gotResponse(response) {
             $scope.cards = response.data.results;
+            $scope.cards
+              .filter(function each(eachCard) {
+                return eachCard.spotifyInfo !== undefined;
+              })
+              .forEach(function each(eachCard) {
+                $scope.audioObj[eachCard.spotifyInfo.id] =
+                  new Audio(eachCard.spotifyInfo.preview_url + '.mp3');
+              });
           })
           .catch(function errorOnGet(error) {
             $scope.cards = error;
@@ -154,9 +164,16 @@
         $scope.spinCardVinyl = function spinCardVinyl(card) {
           if (card.playing === undefined || card.playing === false) {
             card.playing = true;
+
+            if (card.spotifyInfo !== undefined) {
+              ($scope.audioObj[card.spotifyInfo.id]).play();
+            }
           }
           else {
             card.playing = false;
+            if (card.spotifyInfo !== undefined) {
+              ($scope.audioObj[card.spotifyInfo.id]).pause();
+            }
           }
 
           if (JSON.stringify($scope.currentCardIndexPlaying) === JSON.stringify(card)) {
@@ -166,6 +183,9 @@
           }
           else {
             $scope.currentCardIndexPlaying.playing = false;
+            if ($scope.currentCardIndexPlaying.spotifyInfo !== undefined) {
+              ($scope.audioObj[$scope.currentCardIndexPlaying.spotifyInfo.id]).pause();
+            }
             $scope.currentCardIndexPlaying = card;
           }
         };
