@@ -152,7 +152,7 @@ ul {
 }
 
 .circular-spin {
-  animation: spin 1.33s linear infinite;
+  animation: spin 1.33s linear 22.55;
 }
 
 .likes {
@@ -219,10 +219,6 @@ ul {
   left: 245px;
   position: absolute;
   top: 5px;
-}
-
-.circular-spin {
-  animation: spin 1.33s linear 22.55;
 }
 
 @keyframes spin {
