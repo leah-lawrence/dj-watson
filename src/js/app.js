@@ -32,10 +32,15 @@
         $scope.cards = 'loading';
         $scope.selectedFilter = localStorage.getItem('selectedFilter');
         $scope.dateSortOrder = localStorage.getItem('dateSortOrder');
-        $location.path('/' + $scope.selectedFilter.slice(42));
+        if ($scope.selectedFilter) {
+          $location.path('/' + $scope.selectedFilter.slice(42));
+        }
+        else {
+          $location.path('/');
+        }
 
-        $scope.$on('$locationChangeSuccess', function () {
-          const sentiment = $location.path().slice(1);
+        $scope.$on('$locationChangeSuccess', function locationChangeSuccess() {
+          const sentiment = $location.path() ? $location.path().slice(1) : '';
           var urlUpdateFlag = false;
           $location.hash('');
           $scope.filters.forEach(function loopEach(filter) {
@@ -48,7 +53,12 @@
 
           if (!urlUpdateFlag) {
             $scope.selectedFilter = localStorage.getItem('selectedFilter');
-            $location.path('/' + $scope.selectedFilter.slice(42));
+            if ($scope.selectedFilter) {
+              $location.path('/' + $scope.selectedFilter.slice(42));
+            }
+            else {
+              $location.path('/');
+            }
           }
         });
 
@@ -96,7 +106,7 @@
         };
 
         $scope.isControlFilterSelected = function isControlFilterSelected(filter) {
-          return $scope.selectedFilter.includes(filter.name);
+          return $scope.selectedFilter ? $scope.selectedFilter.includes(filter.name) : $scope.selectedFilter;
         };
 
         $scope.isSortFilterIsSelected = function isSortFilterSelected(order) {
@@ -104,7 +114,7 @@
             return order === $scope.dateSortOrder;
           }
 
-          return $scope.dateSortOrder.includes(order);
+          return $scope.dateSortOrder ? $scope.dateSortOrder.includes(order) : '';
         };
 
         $scope.characterFilter = function characterFilter(filterString) {
@@ -116,7 +126,7 @@
         };
 
         $scope.sortByDate = function sortByDate(order) {
-          $scope.dateSortOrder = order + 'year';
+          $scope.dateSortOrder = order === '' ? '' : order + 'year';
           localStorage.setItem('dateSortOrder', $scope.dateSortOrder);
         };
 
