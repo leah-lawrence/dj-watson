@@ -222,6 +222,48 @@ ul {
   top: 5px;
 }
 
+.emotion-bar-anger-background {
+  align-self: flex-start;
+  border: 1px solid mix($anger-red, $white);
+  height: 12px;
+  width: 100%;
+
+  .emotion-bar-anger {
+    align-self: flex-start;
+    background-color: mix($anger-red, $white);
+    height: 10px;
+    width: 75%;
+  }
+}
+
+.emotion-bar-joy-background {
+  align-self: flex-start;
+  border: 1px solid mix($joy-yellow, $white);
+  height: 12px;
+  width: 100%;
+
+  .emotion-bar-joy {
+    align-self: flex-start;
+    background-color: mix($joy-yellow, $white);
+    height: 10px;
+    width: 75%;
+  }
+}
+
+.emotion-bar-sadness-background {
+  align-self: flex-start;
+  border: 1px solid mix($sadness-blue, $white);
+  height: 12px;
+  width: 100%;
+
+  .emotion-bar-sadness {
+    align-self: flex-start;
+    background-color: mix($sadness-blue, $white);
+    height: 10px;
+    width: 75%;
+  }
+}
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);
