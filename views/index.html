@@ -21,10 +21,10 @@
       <!-- <button class="landing--experience__button"><h3>Get started</h3></button> -->
       <div class="guidance">
         <img src="images/arrow.svg" alt="" />
-        <h3 class="guidance--copy">Filter to find music</h3>
+        <h3 class="guidance--copy">Filter by emotion and find new music</h3>
       </div>
     </nav>
-    <nav role="tablist" id="cards-nav" class="controls">
+    <nav role="tablist" id="cards-nav" class="controls controls--responsive">
       <button ng-repeat="filter in filters" class="control control--button" ng-class="{'filter--selected':(filter.selected || isControlFilterSelected(filter))}" ng-click="handleControlClick('-')">
         <img ng-src="{{getImageName(filter.name)}}" alt="{{filter.name}} filter" aria-controls="cards-list"/>
       </button>
@@ -47,7 +47,7 @@
         </button>
       </nav>
     </nav>
-    <div id="cards-background" class="background background--gradient" ng-click="clickBlank($event)">
+    <div id="cards-background" class="background background--gradient background--responsive" ng-click="clickBlank($event)">
       <ul id="cards-list" class='list-inline'>
         <li class="card" ng-repeat="card in cards | orderBy:selectedFilter | orderBy:dateSortOrder track by $index" ng-click="handleCardClick()" ng-class="{'card--selected': card.selected, 'card--played': card.playing === false && !card.selected}" ng-hide="card.spotifyInfo===undefined">
           <div class="likes">{{card.spotifyInfo.popularity ? card.spotifyInfo.popularity: 0}} Likes</div>

@@ -48,6 +48,20 @@ ul {
   position: absolute;
   width: 100vw;
   z-index: 4;
+
+  @media screen and (max-width: 822px) {
+    padding: 90px 0;
+  }
+}
+
+.background--responsive {
+  @media screen and (max-width: 822px) {
+    background-color: $card-color;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 100%;
+  }
 }
 
 .calendar--icons {
@@ -67,6 +81,11 @@ ul {
   margin-top: $margin;
   position: absolute;
   z-index: 6;
+
+  @media screen and (max-width: 822px) {
+    flex-direction: row;
+    margin: 0;
+  }
 }
 
 .control--button {
@@ -80,6 +99,14 @@ ul {
     width: 43px;
   }
 
+  @media screen and (max-width: 822px) {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+  }
+
+
   &:hover {
     background-color: $white90;
     box-shadow: $shadow-hover;
@@ -92,6 +119,22 @@ ul {
   display: flex;
   flex-direction: column;
   margin-top: $margin;
+
+  @media screen and (max-width: 822px) {
+    flex-direction: row;
+    margin-top: 0;
+  }
+}
+
+.controls--responsive {
+  @media screen and (max-width: 822px) {
+    background-color: $white90;
+    color: $accent-color;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+  }
 }
 
 .filter--selected {
@@ -199,6 +242,7 @@ ul {
   }
 
   .guidance {
+    display: flex;
     left: 117px;
     position: absolute;
     top: 117px;
@@ -206,11 +250,24 @@ ul {
     img {
       height: 156px;
       width: 78px;
+      @media screen and (max-width: 822px) {display: none;}
     }
 
     .guidance--copy {
       text-align: center;
-      width: 90px;
+      width: 5em;
+      @media screen and (max-width: 822px) {
+        font-size: 1.414rem;
+        width: 100%;
+      }
+    }
+    @media screen and (max-width: 822px) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      left: 0;
+      right: 0;
+      top: 100px;
     }
   }
 }
