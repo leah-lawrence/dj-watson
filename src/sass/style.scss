@@ -50,6 +50,17 @@ ul {
   z-index: 4;
 }
 
+.calendar--icons {
+  display: flex;
+  flex-direction: row;
+
+  li {
+    img {
+      width: 30px;
+    }
+  }
+}
+
 .controls {
   display: flex;
   flex-direction: column;
@@ -61,7 +72,7 @@ ul {
 .control--button {
   background-color: $card-color;
   border: 0;
-  height: 78px;
+  height: 90px;
   width: 78px;
 
   img {
@@ -140,6 +151,10 @@ ul {
   color: $accent-color;
 }
 
+.circular-spin {
+  animation: spin 1.33s linear infinite;
+}
+
 .likes {
   left: 5px;
   position: absolute;
@@ -200,8 +215,10 @@ ul {
   }
 }
 
-.circular-spin {
-  animation: spin 1.33s linear infinite;
+.share {
+  left: 245px;
+  position: absolute;
+  top: 5px;
 }
 
 @keyframes spin {

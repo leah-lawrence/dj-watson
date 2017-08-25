@@ -26,6 +26,21 @@
           },
         ];
 
+        $scope.adjectives = {
+          'anger': {
+            name: 'angry',
+            clicked: false,
+          },
+          'joy': {
+            name: 'happy',
+            clicked: false,
+          },
+          'sadness': {
+            name: 'sad',
+            clicked: false,
+          },
+        };
+
         $scope.currentCardIndexPlaying = {
           state: 'none',
         };
@@ -63,16 +78,12 @@
           }
         });
 
-        $http.get('http://' + $location.host() + ':' + $location.port() + '/api/getWatsonData')
+        $http.get('api/getWatsonData')
           .then(function gotResponse(response) {
             $scope.cards = response.data.results;
-            console.log('cards =');
-            console.log($scope.cards);
           })
           .catch(function errorOnGet(error) {
             $scope.cards = error;
-            console.log('error =');
-            console.log($scope.cards);
           });
 
         $scope.handleCardClick = function handleCardClick() {
@@ -103,6 +114,7 @@
           var landing = document.querySelector('.landing--experience');
           $location.path('/' + this.filter.name);
           $scope.selectedFilter = order+'enriched_lyrics.emotion.document.emotion.'+this.filter.name; // eslint-disable-line space-infix-ops
+          $scope.adjectives[this.filter.name].clicked = true;
           landing.style.opacity = 0;
           localStorage.setItem('selectedFilter', $scope.selectedFilter);
           window.setTimeout(function timeOut() {

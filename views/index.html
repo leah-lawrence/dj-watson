@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
   <head>
-    <title>Hello</title>
+    <title>DJ Watson</title>
+    <link rel="icon" href="images/Favicon.png">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,26 +29,31 @@
         <img ng-src="{{getImageName(filter.name)}}" alt="{{filter.name}}"/>
       </button>
 
-      <nav ng-hide="!selectedFilter" class="date--controls">
+      <nav ng-disabled="!selectedFilter" ng-hide="!selectedFilter" class="date--controls">
         <button class="control control--button" ng-click="sortByDate('-')" ng-class="{'filter--selected':(filter.selected || isSortFilterIsSelected('-'))}">
-          New to Old
+          <ul class='calendar--icons'>
+            <li><img src="images/up-arrow.svg" aria-label="Sort by date oldest to new"/></li>
+            <li><img src="images/calendar.svg" aria-label="Sort by date oldest to new"/></li>
+          </ul>
         </button>
         <button class="control control--button" ng-click="sortByDate('+')" ng-class="{'filter--selected':(filter.selected || isSortFilterIsSelected('+'))}">
-          Old to New
+          <ul class='calendar--icons'>
+            <li><img src="images/down-arrow.svg" aria-label="Sort by date oldest to new"/></li>
+            <li><img src="images/calendar.svg" aria-label="Sort by date oldest to new"/></li>
+          </ul>
         </button>
         <button class="control control--button" ng-click="sortByDate('')">
-          Clear date
+          <img src="images/delete.svg" aria-label="clear filters"/>
         </button>
       </nav>
     </nav>
     <div id="cards-background" class="background background--gradient" ng-click="clickBlank($event)">
       <ul id="cards-list" class='list-inline'>
-        {{cards}}
         <li class="card" ng-repeat="card in cards | orderBy:selectedFilter | orderBy:dateSortOrder track by $index" ng-click="handleCardClick()" ng-class="{'card--selected': card.selected, 'card--played': card.playing === false && !card.selected}" ng-hide="card.cover===undefined">
           <div class="likes">{{card.spotifyInfo.popularity ? card.spotifyInfo.popularity: 0}} Likes</div>
-          <div class="card--albumcover">
-            <div style="background-image: url({{card.cover ? card.cover : 'images/cover.jpg'}})" ng-class="{'card-cover-default': !card.cover, 'circular-spin': card.playing === true}" class="card--albumcover--circle" >
-              <button class="play-button" ng-click="spinCardVinyl(card)">
+          <div ng-disabled="!selectedFilter" class="card--albumcover">
+            <div ng-disabled="!selectedFilter" style="background-image: url({{card.cover ? card.cover : 'images/cover.jpg'}})" ng-class="{'card-cover-default': !card.cover, 'circular-spin': card.playing === true}" class="card--albumcover--circle" >
+              <button ng-disabled="!selectedFilter" class="play-button" ng-click="spinCardVinyl(card)">
                 <img src="images/play-button.svg" alt="play"/>
               </button>
             </div>
